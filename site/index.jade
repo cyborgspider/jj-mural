@@ -1,9 +1,55 @@
 !!! 5
 html
   head
-    link(href="css/styles.css", rel="stylesheet")
-    script(src="js/scripts.js")
-  body
-    h1 Hello Dolphin is this stuck?
-    h2 Olly olly oxen free!
-    img(src="img/food.png", alt="Hey")
+    meta(name="viewport",content="width=device-width, initial-scale=1.0")
+    meta(name="description", content="J&J Mural strives to be the best ever at everything ever.")
+    link(rel="icon", type="image/x-icon", href="favicon.ico")
+    link(rel="stylesheet",href="css/styles.css")      
+  body.about
+    header
+      nav
+        ul#main-nav
+          li.nav-about.is-active 
+            h2 About Us
+            a(href="#", data-nav='about') About J&amp;J
+            a(href="#", data-nav='about') Our Mission
+            a(href="#", data-nav='about') About Artist
+          li.nav-services
+            h2 Our Services
+            a(href="#", data-nav='services') Services
+            a(href="#", data-nav='services') How It Works
+            a(href="#", data-nav='services') FAQ
+          li.nav-work
+            h2 Our Work
+            a(href="#", data-nav='work') Murals
+            a(href="#", data-nav='work') Fine/Custom/Portrait Art
+            a(href="#", data-nav='work') Frame Art
+    section.about
+      h1 About J&amp;J 
+      h2 Our Mission
+      p We strive to create beautiful affordable art for homes, businesses and institutions. 
+        | A brilliantly designed mural can transform your space, inspiring and delighting all who witness it.  
+        | We seek to create an atmosphere that ignites the imagination, with special care taken to engage you 
+        | in the creative process. We aim to make it accessible for everyone, you don’t need a big budget to have
+        | captivating art in your space!
+    section.services
+      h1 Our Services
+      h2 Blah blah blah
+      p We strive to create beautiful affordable art for homes, businesses and institutions. 
+        | A brilliantly designed mural can transform your space, inspiring and delighting all who witness it.  
+        | We seek to create an atmosphere that ignites the imagination, with special care taken to engage you 
+        | in the creative process. We aim to make it accessible for everyone, you don’t need a big budget to have
+        | captivating art in your space!
+    section.work
+      h1 Our Work
+      h2 werk werk werk
+      p We strive to create beautiful affordable art for homes, businesses and institutions. 
+        | A brilliantly designed mural can transform your space, inspiring and delighting all who witness it.  
+        | We seek to create an atmosphere that ignites the imagination, with special care taken to engage you 
+        | in the creative process. We aim to make it accessible for everyone, you don’t need a big budget to have
+        | captivating art in your space!
+
+
+    script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js")
+    script(src="js/scripts.js")        
+
