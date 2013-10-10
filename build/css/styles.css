@@ -5,18 +5,14 @@ a{text-decoration:none;}
 a:hover{text-decoration:underline}
 ul,ol{margin:0;padding:0;list-style:none}
 .dn{display:none}
+section{display:none;}
+section.is-active{display:block}
 
 header{height:293px;background:url("../img/bg-header.jpg") center 0 no-repeat;transition:background-position .4s ease-in-out}
 #main-nav>li{display:inline-block;width:290px;background:rgba(0,0,0,0.5);}
 #main-nav>li.is-active{background:none}
 #main-nav a{display:block}
 
-body.about header{background-position:center 0}
-body.about section.about{display:block}
-body.about section.work,body.about section.services{display:none}
-body.services header{background-position:center -293px}
-body.services section.services{display:block}
-body.services section.about,body.services section.work{display:none}
-body.work header{background-position:center -586px}
-body.work section.work{display:block}
-body.work section.about,body.work section.services{display:none}
+body.category-about header{background-position:center 0}
+body.category-services header{background-position:center -293px}
+body.category-work header{background-position:center -586px}
