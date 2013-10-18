@@ -1,0 +1,72 @@
+footer
+  background  rgba(45,39,25,0.7)
+  line-height 28px
+  color       $color-sand
+  height      44px
+  padding-top 20px
+  position relative
+  bottom 0
+.footer-wrap
+  width      1280px
+  overflow   hidden
+.right-side
+  float       right  
+  font-size   14px
+  font-weight normal
+#social
+  padding-right 20px
+  border-right  solid 1px #b0a57a
+  float         left
+.social-link
+  width        28px
+  height       28px
+  background   url(../img/social-icons.png) no-repeat
+  display      inline-block
+  text-indent  -9999px
+  margin-right 4px  
+  &.yelp
+    background-position 0 0
+    margin-left 13px
+  &.facebook
+    background-position -28px 0
+  &.pinterest
+    background-position -56px 0
+  &.instagram
+    background-position -84px 0
+    margin 0
+
+#copyright
+  padding-left 20px
+  float        left
+
+#contact-btn
+  font-size   20px
+  width       290px
+  z-index     2
+  position    absolute
+  top         0
+  line-height 64px
+  height      64px
+  transition background-color 0.2s
+  &.is-active
+    background-color #000
+
+#contact-tab
+  width      290px
+  height     0
+  opacity    0
+  position   absolute
+  background rgba(27,23,11,.85)
+  z-index    1
+  font-size  18px
+  color      #fff
+  bottom     64px
+  display none
+  &>p
+    margin-bottom 0
+    line-height 1
+  &.is-active
+    display    block
+    opacity    1
+    bottom     64px
+    height     270px

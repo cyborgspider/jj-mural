@@ -15,7 +15,7 @@ module.exports =function(grunt){
           tasks:   ['stylus']
         },
         html:{
-          files:   ['site/*.jade'],
+          files:   ['site/*.jade','site/partials/*.jade'],
           tasks:   ['jade']
         },
         img:{
@@ -30,17 +30,24 @@ module.exports =function(grunt){
             }
           }        
       },
+      uglify: {
+        my_target: {
+          files: {
+            'build/js/scripts.min.js': ['build/js/scripts.js']
+          }
+        }
+      },       
       stylus:{
         compile: {
           files: {
-            'build/css/styles.css': ['site/styles/*.styl'] // compile and concat into single file
+            'build/css/styles.css': ['site/styles/all.styl'] // compile and concat into single file
           }
         }
 
       },
       jade:{
         compile:{
-          options: {pretty:true},
+          options: {pretty:false},
           files:[{
             expand: true,
             cwd:    'site/',
@@ -71,8 +78,9 @@ module.exports =function(grunt){
      grunt.loadNpmTasks('grunt-contrib-stylus');
      grunt.loadNpmTasks('grunt-contrib-jade');
      grunt.loadNpmTasks('grunt-contrib-imagemin');
-     
+     grunt.loadNpmTasks('grunt-contrib-uglify');      
+
      //Run the task
-     grunt.registerTask('default', ['watch','coffee', 'stylus', 'jade','imagemin']);
-     grunt.registerTask('build', ['coffee', 'stylus', 'jade','imagemin']);
+     grunt.registerTask('default', ['watch','coffee', 'uglify','stylus', 'jade']);
+     grunt.registerTask('build', ['coffee', 'uglify', 'stylus', 'jade']);
 };
