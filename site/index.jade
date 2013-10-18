@@ -10,41 +10,42 @@ html
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->          
   body.home
-    header
-      nav
-        #logo-container
-          a(href='/')#logo
-        ul#main-nav
-          li.category-about 
-            h2 About Us
-            a(href="#", data-nav='about-jj') About J&amp;J
-            a(href="#", data-nav='our-mission') Our Mission
-            a(href="#", data-nav='about-artist') About Artist
-          li.category-services
-            h2 Our Services
-            a(href="#", data-nav='services') Services
-            a(href="#", data-nav='how-it-works') How It Works
-            a(href="#", data-nav='faq') FAQ
-          li.category-work
-            h2 Our Work
-            a(href="#", data-nav='murals') Murals
-            a(href="#", data-nav='fine-art') Fine/Portrait Art
-            a(href="#", data-nav='framed') Frame Art
-          li.empty &nbsp;
+    #wrap
+      header
+        nav
+          #logo-container
+            a(href='/')#logo
+          ul#main-nav
+            li.category-about 
+              h2 About Us
+              a(href="#", data-nav='about-jj') About J&amp;J
+              a(href="#", data-nav='our-mission') Our Mission
+              a(href="#", data-nav='about-artist') About Artist
+            li.category-services
+              h2 Our Services
+              a(href="#", data-nav='services') Services
+              a(href="#", data-nav='how-it-works') How It Works
+              a(href="#", data-nav='faq') FAQ
+            li.category-work
+              h2 Our Work
+              a(href="#", data-nav='murals') Murals
+              a(href="#", data-nav='fine-art') Fine/Portrait Art
+              a(href="#", data-nav='framed') Frame Art
+            li.empty &nbsp;
 
-    h1#section-title
+      h1#section-title
 
-    include partials/home
-    include partials/about-jj      
-    include partials/our-mission
-    include partials/about-artist
-    include partials/services
-    include partials/how-it-works
-    include partials/faq
-    include partials/murals
-    include partials/fine-art
-    include partials/framed
-    include partials/contact
+      include partials/home
+      include partials/about-jj      
+      include partials/our-mission
+      include partials/about-artist
+      include partials/services
+      include partials/how-it-works
+      include partials/faq
+      include partials/murals
+      include partials/fine-art
+      include partials/framed
+      include partials/contact
 
     include partials/footer
 

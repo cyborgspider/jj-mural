@@ -2,6 +2,7 @@ header
   height     294px
   background url(../img/bg-header.jpg) 0 0 no-repeat $body-brown
   transition background-position 0.4s ease-in-out
+  min-width  1280px
 #main-nav
   overflow hidden
   position relative
@@ -29,6 +30,10 @@ header
     &.empty
       width    100%
       position absolute
+      &:hover
+        background $trans-dark-sand
+    &.category-work
+      margin-right 0
 
     &>h2
       color       $color-sand
