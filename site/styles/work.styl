@@ -1,0 +1,73 @@
+$tab-stroke = solid 5px #e8ded6
+
+.work-tabbed-nav
+  border-bottom $tab-stroke
+  overflow      hidden
+  width         1070px
+  margin-bottom 40px
+.work-tab
+  float        left
+  padding-left 20px
+  width        220px
+  background   #eaeaea
+  height       55px
+  line-height  55px
+  font-size    20px
+  color        $text-inactive
+  margin-right 1px
+  cursor       pointer
+  &:hover
+  &.is-active
+    background   #fff
+    border-right $tab-stroke
+    border-top   $tab-stroke
+    color        $text-header
+    height       50px
+    margin-right 0
+
+.work-list
+  width         1070px
+.work-item
+  width         330px
+  height        180px
+  display       inline-block
+  margin-right  40px
+  margin-bottom 40px
+  position      relative
+  overflow      hidden
+  cursor        pointer
+  &:nth-child(3n+3)
+    margin-right 0
+
+
+.desc
+  width            100%
+  height           100%
+  position         absolute
+  left             0
+  top              0
+  background       $trans-dark-sand
+  margin-left      -328px
+  transition       margin-left 0.2s ease-in-out
+  text-decoration  none
+  .work-item:hover &
+    margin-left 0
+
+.title
+.type
+.dimension
+  color #fff
+  padding 0 20px
+  opacity 0
+  transition opacity 0.4s 
+  .work-item:hover &
+    opacity 1
+
+.title
+  font-size      20px
+  padding-top    20px
+  padding-bottom 20px
+.type
+.dimension
+  font-sans()
+  margin-bottom 10px
