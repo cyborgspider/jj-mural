@@ -6,7 +6,8 @@ ul,ol{margin:0;padding:0;list-style:none}
 #wrap:after{content:'';display:block;height:64px}
 section{display:none;padding-left:290px;padding-top:58px;position:relative;min-height:460px;width:910px;}
 section.is-active{display:block}
-section>p{line-height:1.8}
+section>p{line-height:1.8;margin-bottom:30px;}
+section>p a{color:#444133}
 h1,h2,h3{font-weight:normal;margin:0}
 .section-title{position:absolute;top:-70px;left:30px;color:#fff;font-size:36px;}
 .section-title:first-letter{font-size:70px}
