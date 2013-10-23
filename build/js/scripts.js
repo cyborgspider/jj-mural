@@ -48,9 +48,12 @@
       });
     });
     $('.work-tab').click(function() {
-      var link, page;
+      var link, page, section;
       page = $(this).data('nav');
       link = $('#main-nav').find('a[data-nav=' + page + ']');
+      section = $('#section-' + page);
+      section.siblings().removeClass('is-active');
+      section.addClass('is-active');
       link.siblings().removeClass('is-active');
       link.addClass('is-active');
       $(this).siblings().removeClass('is-active');

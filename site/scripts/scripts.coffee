@@ -46,12 +46,16 @@ $ ->
     )
 
     $('.work-tab').click ->
-        page = $(@).data 'nav'
-        link = $('#main-nav').find('a[data-nav='+page+']')
+        page    = $(@).data 'nav'
+        link    = $('#main-nav').find('a[data-nav='+page+']')
+        section = $('#section-'+page)  
+        section.siblings().removeClass 'is-active'
+        section.addClass 'is-active'                
         link.siblings().removeClass 'is-active'
         link.addClass 'is-active'
         $(@).siblings().removeClass 'is-active'
         $(@).addClass 'is-active'
+
 
 
     $('.work-item').find('.desc').fancybox(

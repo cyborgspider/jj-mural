@@ -12,6 +12,10 @@ h1,h2,h3{font-weight:normal;margin:0}
 .section-title{position:absolute;top:-70px;left:30px;color:#fff;font-size:36px;}
 .section-title:first-letter{font-size:70px}
 .page-title{font-size:24px;color:#444133}
+strong{color:#444133}
+h3{margin-top:25px}
+.services-list{list-style-type:disc;margin-left:15px;margin-top:25px;margin-bottom:35px;padding-left:5px;}
+.services-list>li{margin-bottom:10px}
 header{height:294px;background:url("../img/bg-header.jpg") 0 0 no-repeat #352c25;transition:background-position .4s ease-in-out;min-width:1280px}
 #main-nav{overflow:hidden;position:relative;}
 #main-nav>li{display:inline-block;margin:0 1px 0 0;width:250px;padding:15px 20px;background:rgba(37,32,17,0.7);height:110px;}
