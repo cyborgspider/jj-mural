@@ -14,23 +14,23 @@ html
       header
         nav
           #logo-container
-            a(href='/')#logo
+            a(href='#', data-nav="home",data-context="index")#logo
           ul#main-nav
             li.category-about 
               h2 About Us
-              a(href="#", data-nav='our-mission') Our Mission
-              a(href="#", data-nav='about-jj') About J&amp;J
-              a(href="#", data-nav='about-artist') About The Artist
+              a(href="#", data-nav='our-mission',data-context="nav") Our Mission
+              a(href="#", data-nav='about-jj',data-context="nav") About J&amp;J
+              a(href="#", data-nav='about-artist',data-context="nav") About The Artist
             li.category-services
               h2 Our Services
-              a(href="#", data-nav='services') Services
-              a(href="#", data-nav='how-it-works') How It Works
-              a(href="#", data-nav='faq') FAQ
+              a(href="#", data-nav='services',data-context="nav") Services
+              a(href="#", data-nav='how-it-works',data-context="nav") How It Works
+              a(href="#", data-nav='faq',data-context="nav") FAQ
             li.category-work
               h2 Our Work
-              a(href="#", data-nav='murals') Murals
-              a(href="#", data-nav='fine-art') Fine/Portrait Art
-              a(href="#", data-nav='framed') Framed Art
+              a(href="#", data-nav='murals',data-context="nav") Murals
+              a(href="#", data-nav='fine-art',data-context="nav") Fine/Portrait Art
+              a(href="#", data-nav='framed',data-context="nav") Framed Art
             li.empty &nbsp;
 
       h1#section-title

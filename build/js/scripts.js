@@ -1,37 +1,60 @@
 (function() {
   $(function() {
-    $('#main-nav').on('click', 'a', function(e) {
-      var bodyClass, listItem, listItemClass, pageLabel, section;
+    var linkHandler;
+    window.location.hash = 'home';
+    linkHandler = function(e) {
+      var bodyClass, context, listItem, listItemClass, nav, page, section;
       e.preventDefault();
-      pageLabel = $(this).data('nav');
+      page = $(this).data('nav');
       bodyClass = $('body').attr('class');
-      section = $('#section-' + pageLabel);
-      listItem = $(this).closest('li');
-      listItemClass = listItem.attr('class');
-      if (bodyClass !== listItemClass) {
-        $('body').removeClass().addClass(listItemClass);
+      section = $('#section-' + page);
+      context = $(this).data('context');
+      nav = $('#main-nav');
+      if (context === 'home') {
+        $('body').removeClass().addClass('category-work');
+        nav.find('.category-work').addClass('is-active');
+        nav.find('a[data-nav=' + page + ']').addClass('is-active');
       }
-      $('#main-nav').find('a').removeClass('is-active');
-      $(this).addClass('is-active');
-      listItem.siblings().removeClass('is-active');
-      listItem.addClass('is-active');
+      if (context === 'nav') {
+        listItem = $(this).closest('li');
+        listItemClass = listItem.attr('class');
+        if (bodyClass !== listItemClass) {
+          $('body').removeClass().addClass(listItemClass);
+        }
+        nav.find('a').removeClass('is-active');
+        $(this).addClass('is-active');
+        listItem.siblings().removeClass('is-active');
+        listItem.addClass('is-active');
+      }
+      if (context === 'tab') {
+        nav.find('a').removeClass('is-active');
+        nav.find('a[data-nav=' + page + ']').addClass('is-active');
+        $(this).siblings().removeClass('is-active');
+        $(this).addClass('is-active');
+      }
+      if (context === 'contact') {
+        $('body').removeClass().addClass('category-contact');
+        nav.find('li').removeClass('is-active');
+        nav.find('a').removeClass('is-active');
+      }
+      if (context === 'index') {
+        $('body').removeClass().addClass('home');
+        nav.find('li').removeClass('is-active');
+        nav.find('a').removeClass('is-active');
+      }
       section.siblings().removeClass('is-active');
       section.addClass('is-active');
-      return window.location.hash = pageLabel;
-    });
-    $('#home-nav').on('click', '.home-nav-link', function(e) {
-      var bodyClass, pageLabel, section;
-      e.preventDefault();
-      pageLabel = $(this).data('nav');
-      bodyClass = 'category-work';
-      section = $('#section-' + pageLabel);
-      $('body').removeClass().addClass(bodyClass);
-      $('#main-nav').find('.category-work').addClass('is-active');
-      $('#main-nav').find('a[data-nav=' + pageLabel + ']').addClass('is-active');
-      section.siblings().removeClass('is-active');
-      section.addClass('is-active');
-      return window.location.hash = pageLabel;
-    });
+      return window.location.hash = page;
+    };
+    $('#main-nav').on('click', 'a', linkHandler);
+    $('#home-nav').on('click', '.home-nav-link', linkHandler);
+    $('.work-tab').on('click', linkHandler);
+    $('.contact-link').attr({
+      'data-nav': 'contact',
+      'data-context': 'contact'
+    }).on('click', linkHandler);
+    $('.contact-link').click();
+    $('#logo').on('click', linkHandler);
     $('#contact-btn').hover(function() {
       $(this).addClass('is-active');
       return $('#contact-tab').show().animate({
@@ -46,18 +69,6 @@
       }, 200, function() {
         return $(this).hide();
       });
-    });
-    $('.work-tab').click(function() {
-      var link, page, section;
-      page = $(this).data('nav');
-      link = $('#main-nav').find('a[data-nav=' + page + ']');
-      section = $('#section-' + page);
-      section.siblings().removeClass('is-active');
-      section.addClass('is-active');
-      link.siblings().removeClass('is-active');
-      link.addClass('is-active');
-      $(this).siblings().removeClass('is-active');
-      return $(this).addClass('is-active');
     });
     return $('.work-item').find('.desc').fancybox({
       padding: 0,

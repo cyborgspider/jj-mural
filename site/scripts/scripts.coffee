@@ -1,32 +1,54 @@
 $ ->
-    $('#main-nav').on 'click','a', (e)->
-        e.preventDefault() 
-        pageLabel     = $(@).data 'nav' #store the data-nav attribute to determine which page to navigate to
-        bodyClass     = $('body').attr 'class' #store the class of the body. We change the body class based on what section we're in.
-        section       = $('#section-'+pageLabel) #store the class of the section. We change the section class based on what links we click
-        listItem      = $(@).closest 'li' #the parent li of the <a> we click.
-        listItemClass = listItem.attr 'class' #the parent li class of the <a> we click. This will be match the body class.
-        unless bodyClass is listItemClass then $('body').removeClass().addClass listItemClass
-        $('#main-nav').find('a').removeClass 'is-active'
-        $(@).addClass 'is-active'
-        listItem.siblings().removeClass 'is-active'
-        listItem.addClass 'is-active'
-        section.siblings().removeClass 'is-active'
-        section.addClass 'is-active'    
-        window.location.hash = pageLabel #hash handler
+    window.location.hash = 'home'#Reset all hashes upon page reload
 
-    $('#home-nav').on 'click','.home-nav-link', (e) ->
-        e.preventDefault() 
-        pageLabel     = $(@).data 'nav' #store the data-nav attribute to determine which page to navigate to
-        bodyClass     = 'category-work' #store the class of the body. We change the body class based on what section we're in.
-        section       = $('#section-'+pageLabel) #store the class of the section. We change the section class based on what links we click
-        $('body').removeClass().addClass bodyClass
-        $('#main-nav').find('.category-work').addClass 'is-active'
-        $('#main-nav').find('a[data-nav='+pageLabel+']').addClass 'is-active'
-        section.siblings().removeClass 'is-active'
-        section.addClass 'is-active'    
-        window.location.hash = pageLabel #hash handler        
+    linkHandler = (e)->
+        e.preventDefault()
+        page      = $(@).data 'nav'
+        bodyClass = $('body').attr 'class'
+        section   = $('#section-'+page)
+        context   = $(@).data 'context'
+        nav       = $('#main-nav')                
 
+        if context is 'home'
+            $('body').removeClass().addClass 'category-work'
+            nav.find('.category-work').addClass 'is-active'
+            nav.find('a[data-nav='+page+']').addClass 'is-active'
+        if context is 'nav'
+            listItem      = $(@).closest 'li'
+            listItemClass = listItem.attr 'class'
+            unless bodyClass is listItemClass then $('body').removeClass().addClass listItemClass
+            nav.find('a').removeClass 'is-active'
+            $(@).addClass 'is-active'
+            listItem.siblings().removeClass 'is-active'
+            listItem.addClass 'is-active'
+        if context is 'tab'
+            nav.find('a').removeClass 'is-active'
+            nav.find('a[data-nav='+page+']').addClass 'is-active'
+            $(@).siblings().removeClass 'is-active'
+            $(@).addClass 'is-active'
+        if context is 'contact'
+            $('body').removeClass().addClass 'category-contact'            
+            nav.find('li').removeClass 'is-active'
+            nav.find('a').removeClass 'is-active'
+        if context is 'index'
+            $('body').removeClass().addClass 'home'
+            nav.find('li').removeClass 'is-active'
+            nav.find('a').removeClass 'is-active'
+
+        section.siblings().removeClass 'is-active'
+        section.addClass 'is-active' 
+        window.location.hash = page 
+
+
+    $('#main-nav').on 'click','a',linkHandler
+    $('#home-nav').on 'click','.home-nav-link', linkHandler
+    $('.work-tab').on 'click', linkHandler
+    $('.contact-link').attr({'data-nav':'contact','data-context':'contact'}).on 'click', linkHandler
+    $('.contact-link').click()
+    $('#logo').on 'click', linkHandler
+
+
+    #Contact Button on Footer Animation
     $('#contact-btn').hover(
         ->
             $(@).addClass 'is-active'    
@@ -45,19 +67,7 @@ $ ->
             )
     )
 
-    $('.work-tab').click ->
-        page    = $(@).data 'nav'
-        link    = $('#main-nav').find('a[data-nav='+page+']')
-        section = $('#section-'+page)  
-        section.siblings().removeClass 'is-active'
-        section.addClass 'is-active'                
-        link.siblings().removeClass 'is-active'
-        link.addClass 'is-active'
-        $(@).siblings().removeClass 'is-active'
-        $(@).addClass 'is-active'
-
-
-
+    #Lightbox
     $('.work-item').find('.desc').fancybox(
         padding:     0
         openEffect:  'elastic'
