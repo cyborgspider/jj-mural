@@ -1,23 +1,45 @@
 #contact-box
-  float left
-  width 290px
+  float  left
+  width  290px
   border solid 1px #000
 
-#form
-  margin-left 310px
-
-.row
-  clear both
-
-label
-  width      200px
-  float      left
-  clear      both
-  text-align right
-.input-wrap
+#contact-form
+  clearfix()
   float left
-  height 30px
+  padding 10px 0 20px
+.row
+  margin-bottom 20px
+  position      relative
+  clearfix()
+.input-wrap
+  height       36px
+  width        400px
+  display      inline-block
+  margin-right 20px
 
 input[type="text"]
-  width 100%
-  height 100%
+textarea
+select
+  width      100%
+  height     100%
+  padding    0 10px
+  font-size  16px
+  box-sizing border-box
+
+textarea
+  height 200px
+  resize none
+  padding 10px
+
+#submit-btn
+  width       auto
+  padding     0 10px
+  line-height 40px
+  height      40px
+  border      none
+  font-size   18px
+  box-shadow  0 2px 3px rgba(0,0,0,0.3)
+  cursor      pointer
+  background  $button-background
+  font-family 'Jacques Francois', serif
+  color       #fff

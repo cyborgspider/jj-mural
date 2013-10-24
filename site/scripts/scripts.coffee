@@ -44,7 +44,7 @@ $ ->
     $('#home-nav').on 'click','.home-nav-link', linkHandler
     $('.work-tab').on 'click', linkHandler
     $('.contact-link').attr({'data-nav':'contact','data-context':'contact'}).on 'click', linkHandler
-    $('.contact-link').click()
+    #$('.contact-link').click()
     $('#logo').on 'click', linkHandler
 
 

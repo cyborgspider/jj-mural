@@ -53,7 +53,6 @@
       'data-nav': 'contact',
       'data-context': 'contact'
     }).on('click', linkHandler);
-    $('.contact-link').click();
     $('#logo').on('click', linkHandler);
     $('#contact-btn').hover(function() {
       $(this).addClass('is-active');

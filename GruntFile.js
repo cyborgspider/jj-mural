@@ -37,8 +37,11 @@ module.exports =function(grunt){
           }
         }
       },       
-      stylus:{
+      stylus:{        
         compile: {
+          options:{
+            import:['nib']
+          },          
           files: {
             'build/css/styles.css': ['site/styles/all.styl'] // compile and concat into single file
           }
@@ -57,6 +60,14 @@ module.exports =function(grunt){
           }]
         }
       },
+      copy: {
+        main: {
+          expand: true,
+          cwd: 'site/',
+          src: 'php/*',
+          dest: 'build/'
+        },
+      },      
       imagemin:{
         options: {                  
           optimizationLevel: 7
@@ -78,9 +89,10 @@ module.exports =function(grunt){
      grunt.loadNpmTasks('grunt-contrib-stylus');
      grunt.loadNpmTasks('grunt-contrib-jade');
      grunt.loadNpmTasks('grunt-contrib-imagemin');
-     grunt.loadNpmTasks('grunt-contrib-uglify');      
+     grunt.loadNpmTasks('grunt-contrib-uglify'); 
+     grunt.loadNpmTasks('grunt-contrib-copy');          
 
      //Run the task
-     grunt.registerTask('default', ['watch','coffee', 'uglify','stylus', 'jade']);
-     grunt.registerTask('build', ['coffee', 'uglify', 'stylus', 'jade']);
+     grunt.registerTask('default', ['watch','coffee', 'uglify','stylus', 'jade','copy']);
+     grunt.registerTask('build', ['coffee', 'uglify', 'stylus', 'jade','copy']);
 };

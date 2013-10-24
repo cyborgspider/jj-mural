@@ -53,21 +53,45 @@ footer
     background-color #000
 
 #contact-tab
-  width      290px
+  width      230px
   height     0
   opacity    0
   position   absolute
-  background rgba(27,23,11,.85)
+  background url(../img/footer-top.png) no-repeat 0 0 rgba(27,23,11,.85)
   z-index    1
   font-size  18px
   color      #fff
   bottom     64px
-  display none
+  padding    15px 30px 0 30px
+  display    none
+  a
+    color #fff
   &>p
+    line-height   1.5
     margin-bottom 0
-    line-height 1
+    &.first
+      line-height 1.5
   &.is-active
     display    block
     opacity    1
     bottom     64px
     height     270px
+
+.contact-tab-button
+  padding         0 13px
+  width           147px
+  height          40px
+  line-height     40px
+  color           #fff
+  margin-top      30px
+  background      $button-background
+  font-size       15px
+  display         block
+  text-decoration none
+  text-align      center
+  font-sans()
+.btn-arrow
+  background  url(../img/sprite.png) 0 -46px
+  width       9px
+  height      13px
+  display     inline-block
