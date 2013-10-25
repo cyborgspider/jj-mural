@@ -18,16 +18,18 @@ body
   overflow-x  hidden
   overflow-y  auto
   height      100%
-  background url(../img/bg-texture.png) repeat-y 0 0  
+  background url(../img/bg-texture.png) repeat-y 0 0
 
 ul
 ol
   margin     0
-  padding    0 
+  padding    0
   list-style none
 
 .dn
   display none
+.cl
+  clearfix()
 
 #wrap
   min-height    100%
@@ -44,7 +46,6 @@ section
   position     relative
   min-height   460px
   width        910px
-  overflow     hidden
   &.is-active
     display block
   &>p

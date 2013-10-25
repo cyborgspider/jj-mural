@@ -1,13 +1,13 @@
 section#section-contact
   h2.page-title Contact Us
-  p Start the journey to beautifying your space. We are here to answer your questions, receive feedback and accept requests. 
+  p Start the journey to beautifying your space. We are here to answer your questions, receive feedback and accept requests.
   small All fields are required unless specified.
   form(method="post", action="php/send-email.php",id="contact-form")
     .row
       .input-wrap
         input(type="text",placeholder="Name",name="name")
       .input-wrap
-        input(type="text",placeholder="Email",name="email")          
+        input(type="text",placeholder="Email",name="email")
     .row
       .input-wrap
         input(type="text",placeholder="Phone Number (optional)",name="phone")
@@ -18,9 +18,10 @@ section#section-contact
           option Portraits
           option Fine Art
           option Art Lessons
-          option Other          
+          option Other
     .row
       .input-wrap
         textarea(placeholder="Your message",name="message")
-    .row.cl
+    .row
       input(type="submit", value="Send Message", id="submit-btn") Send Message
+  div.cl
