@@ -1,5 +1,6 @@
 $ ->
     window.location.hash = 'home'#Reset all hashes upon page reload
+    $('form')[0].reset() #Reset contact form upon page reload
 
     linkHandler = (e)->
         e.preventDefault()
@@ -7,7 +8,7 @@ $ ->
         bodyClass = $('body').attr 'class'
         section   = $('#section-'+page)
         context   = $(@).data 'context'
-        nav       = $('#main-nav')                
+        nav       = $('#main-nav')
 
         if context is 'home'
             $('body').removeClass().addClass 'category-work'
@@ -25,7 +26,7 @@ $ ->
             nav.find('a').removeClass 'is-active'
             nav.find('a[data-nav='+page+']').addClass 'is-active'
         if context is 'contact'
-            $('body').removeClass().addClass 'category-contact'            
+            $('body').removeClass().addClass 'category-contact'
             nav.find('li').removeClass 'is-active'
             nav.find('a').removeClass 'is-active'
         if context is 'index'
@@ -34,8 +35,8 @@ $ ->
             nav.find('a').removeClass 'is-active'
 
         section.siblings().removeClass 'is-active'
-        section.addClass 'is-active' 
-        window.location.hash = page 
+        section.addClass 'is-active'
+        window.location.hash = page
 
 
     $('#main-nav').on 'click','a',linkHandler
@@ -49,18 +50,18 @@ $ ->
     #Contact Button on Footer Animation
     $('#contact-btn').hover(
         ->
-            $(@).addClass 'is-active'    
+            $(@).addClass 'is-active'
             $('#contact-tab').show().animate(
                 opacity:1
                 height:'270px'
                 200
             )
         ->
-            $(@).removeClass 'is-active' 
+            $(@).removeClass 'is-active'
             $('#contact-tab').animate(
                 opacity:0
                 height:'0'
-                200 
+                200
                 -> $(@).hide()
             )
     )
@@ -69,9 +70,9 @@ $ ->
     $('.work-item').find('.desc').fancybox(
         padding:     0
         openEffect:  'elastic'
-        closeEffect: 'elastic'   
+        closeEffect: 'elastic'
         nextEffect:  'fade'
-        prevEffect:  'fade'   
+        prevEffect:  'fade'
         beforeShow: ->
             desc = @.element.find('.title').text()
             @.title = desc
