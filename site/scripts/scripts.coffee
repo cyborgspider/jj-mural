@@ -24,8 +24,6 @@ $ ->
         if context is 'tab'
             nav.find('a').removeClass 'is-active'
             nav.find('a[data-nav='+page+']').addClass 'is-active'
-            $(@).siblings().removeClass 'is-active'
-            $(@).addClass 'is-active'
         if context is 'contact'
             $('body').removeClass().addClass 'category-contact'            
             nav.find('li').removeClass 'is-active'
@@ -80,3 +78,16 @@ $ ->
         helpers:
             title: null
     )
+
+    #Contact Form
+    $('#contact-form').parsley
+        successClass: 'success'
+        errorClass: 'error'
+
+    $('#submit-btn').click ->
+        $.ajax
+            type: 'POST'
+            url: 'php/send-email.php'
+            data: $('#contact-formm').serialize()
+            success: ->
+                $('#contact-form').html('<h3>Thanks for contacting us! We will get back to you shortly.')

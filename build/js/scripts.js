@@ -29,8 +29,6 @@
       if (context === 'tab') {
         nav.find('a').removeClass('is-active');
         nav.find('a[data-nav=' + page + ']').addClass('is-active');
-        $(this).siblings().removeClass('is-active');
-        $(this).addClass('is-active');
       }
       if (context === 'contact') {
         $('body').removeClass().addClass('category-contact');
@@ -69,7 +67,7 @@
         return $(this).hide();
       });
     });
-    return $('.work-item').find('.desc').fancybox({
+    $('.work-item').find('.desc').fancybox({
       padding: 0,
       openEffect: 'elastic',
       closeEffect: 'elastic',
@@ -83,6 +81,20 @@
       helpers: {
         title: null
       }
+    });
+    $('#contact-form').parsley({
+      successClass: 'success',
+      errorClass: 'error'
+    });
+    return $('#submit-btn').click(function() {
+      return $.ajax({
+        type: 'POST',
+        url: 'php/send-email.php',
+        data: $('#contact-formm').serialize(),
+        success: function() {
+          return $('#contact-form').html('<h3>Thanks for contacting us! We will get back to you shortly.');
+        }
+      });
     });
   });
 

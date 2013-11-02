@@ -25,12 +25,22 @@ select
   padding    0 10px
   font-size  16px
   box-sizing border-box
+  background #fff
+  &.error
+    background #e3cece
 
+select
+  height 36px
+  border solid 1px #bbb
 textarea
   height 200px
   resize none
   padding 10px
 
+.parsley-error-list
+  position    absolute
+  font-size   10px
+  padding-top 5px
 #submit-btn
   width       auto
   padding     0 10px
@@ -43,3 +53,4 @@ textarea
   background  $button-background
   font-family 'Jacques Francois', serif
   color       #fff
+

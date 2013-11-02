@@ -62,10 +62,19 @@ module.exports =function(grunt){
       },
       copy: {
         main: {
-          expand: true,
-          cwd: 'site/',
-          src: 'php/*',
-          dest: 'build/'
+          files:[
+          {
+            expand: true,
+            cwd: 'site/',
+            src: 'php/*',
+            dest: 'build/'
+          },
+          {
+            expand: true,
+            cwd: 'site/vendor',
+            src: '*.js',
+            dest: 'build/js'
+          }]
         },
       },      
       imagemin:{
