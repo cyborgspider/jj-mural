@@ -1,6 +1,7 @@
 $ ->
     window.location.hash = 'home'#Reset all hashes upon page reload
-    $('form')[0].reset()
+    $('form')[0].reset() #Reset contact form upon page reload
+
     linkHandler = (e)->
         e.preventDefault()
         page      = $(@).data 'nav'
