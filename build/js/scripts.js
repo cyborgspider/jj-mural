@@ -2,6 +2,7 @@
   $(function() {
     var linkHandler;
     window.location.hash = 'home';
+    $('form')[0].reset();
     linkHandler = function(e) {
       var bodyClass, context, listItem, listItemClass, nav, page, section;
       e.preventDefault();
