@@ -68,7 +68,6 @@ $ ->
 
     #Lightbox
     $('.work-item').find('.desc').fancybox(
-        padding:     0
         openEffect:  'elastic'
         closeEffect: 'elastic'
         nextEffect:  'fade'
@@ -81,14 +80,17 @@ $ ->
     )
 
     #Contact Form
-    $('#contact-form').parsley
-        successClass: 'success'
-        errorClass: 'error'
+    $('#submit-btn').click (e) ->
+        e.preventDefault()
+        if $('input[name="form-phone"]').val() is '' then $('input[name="form-phone"]').val('No phone number provided')
+        d = $('#contact-form').serialize()
+        if $('#contact-form').parsley('validate')
+            $.ajax
+                type: 'POST'
+                url: 'php/send-email.php'
+                data: d
+                success: ->
+                    $('#contact-form').html('<h3>Thanks for contacting us! We will get back to you shortly.</h3>')
+                error: ->
+                    $('#contact-form').html('<h3>There was an error with your submission. Please contact us at (213) 555-555.</h3>')
 
-    $('#submit-btn').click ->
-        $.ajax
-            type: 'POST'
-            url: 'php/send-email.php'
-            data: $('#contact-formm').serialize()
-            success: ->
-                $('#contact-form').html('<h3>Thanks for contacting us! We will get back to you shortly.')

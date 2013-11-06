@@ -2,17 +2,17 @@ section#section-contact
   h2.page-title Contact Us
   p Start the journey to beautifying your space. We are here to answer your questions, receive feedback and accept requests.
   small All fields are required unless specified.
-  form(method="post", action="php/send-email.php",id="contact-form",data-validate="parsley")
+  form(method="post", id="contact-form",action="php/send-email.php")
     .row
       .input-wrap
-        input(type="text",placeholder="Name",name="name",id="form-name",data-required)
+        input(type="text",placeholder="Name",name="form-name",data-required)
       .input-wrap
-        input(type="text",placeholder="Email",name="email",id="form-email",data-required,data-type="email")
+        input(type="text",placeholder="Email",name="form-email",data-required,data-type="email")
     .row
       .input-wrap
-        input(type="text",placeholder="Phone Number (optional)",name="phone",id="form-phone",data-type="phone")
+        input(type="text",placeholder="Phone Number (optional)",name="form-phone",data-error-message="Please enter valid phone number")
       .input-wrap
-        select(data-required,name="interest",id="form-interest")
+        select(data-required,name="form-interest")
           option(value) I'm interested in...
           option(value="Murals") Murals
           option(value="Portraits") Portraits
@@ -21,7 +21,7 @@ section#section-contact
           option(value="Other") Other
     .row
       .input-wrap
-        textarea(placeholder="Your message (500 Characters Max)",name="message",id="form-message",data-required,data-maxlength="500")
+        textarea(placeholder="Your message (500 Characters Max)",name="form-message",data-required,data-maxlength="500")
     .row
       input(type="submit", value="Send Message", id="submit-btn") Send Message
   div.cl

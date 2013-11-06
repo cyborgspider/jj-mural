@@ -9,29 +9,25 @@ $tab-stroke = solid 5px #e8ded6
   float         left
   padding-top   20px
   padding-left  20px
-  width         220px
+  width         240px
   background    #eaeaea
-  height        60px
+  height        59px
   box-sizing    border-box
   font-size     20px
   color         $text-inactive
   margin-right  1px
   cursor        pointer
   margin-bottom -5px
-  border-bottom $tab-stroke
+  background url(../img/work-tabs.png) 0 50%
   &:hover
   &.is-active
-    background    #fff
-    border-right  $tab-stroke
-    border-top    $tab-stroke
-    border-bottom solid 5px #fff
+    background-position 0 0 
     color         $text-header
-    margin-right  0
-    padding-top   15px
   &.tab-fine-art
   &.tab-framed
     &.is-active
-      border-left   $tab-stroke
+    &:hover
+      background-position 0 100%
 
 
 .work-list

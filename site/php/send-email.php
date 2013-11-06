@@ -10,7 +10,8 @@ if($_POST){
 //send email
     $email_subject = "JJ Mural Website Message from $name";
     $email_body = "You have received a new message from your website. ".
-    " Here are the details:\n Name: $name \n Email: $email \n Phone: $phone  \n Interested About: $interest \n Message \n $message";
+    " Here are the details:\n Name: $name \n Email: $email \n Phone: $phone  \n Interested About: $interest \n Message: \n $message";
     mail($to,$email_subject,$email_body);
 }
 ?>
+

@@ -69,7 +69,6 @@
       });
     });
     $('.work-item').find('.desc').fancybox({
-      padding: 0,
       openEffect: 'elastic',
       closeEffect: 'elastic',
       nextEffect: 'fade',
@@ -83,19 +82,26 @@
         title: null
       }
     });
-    $('#contact-form').parsley({
-      successClass: 'success',
-      errorClass: 'error'
-    });
-    return $('#submit-btn').click(function() {
-      return $.ajax({
-        type: 'POST',
-        url: 'php/send-email.php',
-        data: $('#contact-formm').serialize(),
-        success: function() {
-          return $('#contact-form').html('<h3>Thanks for contacting us! We will get back to you shortly.');
-        }
-      });
+    return $('#submit-btn').click(function(e) {
+      var d;
+      e.preventDefault();
+      if ($('input[name="form-phone"]').val() === '') {
+        $('input[name="form-phone"]').val('No phone number provided');
+      }
+      d = $('#contact-form').serialize();
+      if ($('#contact-form').parsley('validate')) {
+        return $.ajax({
+          type: 'POST',
+          url: 'php/send-email.php',
+          data: d,
+          success: function() {
+            return $('#contact-form').html('<h3>Thanks for contacting us! We will get back to you shortly.</h3>');
+          },
+          error: function() {
+            return $('#contact-form').html('<h3>There was an error with your submission. Please contact us at (213) 555-555.</h3>');
+          }
+        });
+      }
     });
   });
 
