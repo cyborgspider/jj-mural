@@ -3,6 +3,9 @@ header
   background url(../img/bg-header.jpg) 0 0 no-repeat $body-brown
   transition background-position 0.4s ease-in-out
   min-width  1280px
+  @media screen and (max-width:1024px)
+    min-width 1024px
+
 #main-nav
   overflow hidden
   position relative
@@ -10,6 +13,8 @@ header
     display    inline-block
     margin     0 1px 0 0
     width      250px
+    @media screen and (max-width:1024px)
+      width 200px
     padding    15px 20px
     background $trans-dark-sand
     height     110px
@@ -56,6 +61,8 @@ header
 #logo-container
   background   $trans-dark-sand
   width        338px 
+  @media screen and (max-width:1024px)
+    width 260px
   float left
   margin-right 1px
   height       140px

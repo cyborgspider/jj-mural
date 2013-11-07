@@ -3,6 +3,8 @@ $tab-stroke = solid 5px #e8ded6
 .work-tabbed-nav
   border-bottom $tab-stroke
   width         1070px
+  @media screen and (max-width:1024px)
+    width 740px
   margin-bottom 40px
   clearfix()
 .work-tab
@@ -32,6 +34,8 @@ $tab-stroke = solid 5px #e8ded6
 
 .work-list
   width         1070px
+  @media screen and (max-width:1024px)
+    width 740px
 .work-item
   width         330px
   height        180px
@@ -41,8 +45,10 @@ $tab-stroke = solid 5px #e8ded6
   position      relative
   overflow      hidden
   cursor        pointer
-  &:nth-child(3n+3)
-    margin-right 0
+  @media screen and (min-width:1024px)
+    &:nth-child(3n+3)
+      margin-right 0
+
 
 
 .desc
