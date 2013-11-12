@@ -86,7 +86,8 @@ body.category-contact section{background:url("../img/bg-section-contact.jpg") no
 .input-wrap{height:36px;width:400px;display:inline-block;margin-right:20px;}
 @media screen and (max-width:1024px){.input-wrap{margin-bottom:20px}
 }input[type="text"],textarea,select{width:100%;height:100%;padding:0 10px;font-size:16px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;background:#fff;}
-input[type="text"].error,textarea.error,select.error{background:#e3cece}
+input[type="text"].parsley-error,textarea.parsley-error,select.parsley-error{background:#e3cece}
+input[type="text"].parsley-success,textarea.parsley-success,select.parsley-success{background:#cee3e3}
 select{height:36px;border:solid 1px #bbb}
 textarea{height:200px;resize:none;padding:10px}
 .parsley-error-list{position:absolute;font-size:10px;padding-top:5px}
