@@ -3,6 +3,21 @@
     var linkHandler;
     window.location.hash = 'home';
     $('form')[0].reset();
+    $.History.bind("/our-mission", function(state) {
+      $('body').removeClass('home').addClass('category-about');
+      $('#section-our-mission').siblings().removeClass('is-active');
+      return $('#section-our-mission').addClass('is-active');
+    });
+    $.History.bind("/about-jj", function(state) {
+      $('body').removeClass('home').addClass('category-about');
+      $('#section-about-jj').siblings().removeClass('is-active');
+      return $('#section-about-jj').addClass('is-active');
+    });
+    $.History.bind("/about-artist", function(state) {
+      $('body').removeClass('home').addClass('category-about');
+      $('#section-about-artist').siblings().removeClass('is-active');
+      return $('#section-about-artist').addClass('is-active');
+    });
     linkHandler = function(e) {
       var bodyClass, context, listItem, listItemClass, nav, page, section;
       e.preventDefault();
@@ -45,14 +60,6 @@
       section.addClass('is-active');
       return window.location.hash = page;
     };
-    $('#main-nav').on('click', 'a', linkHandler);
-    $('#home-nav').on('click', '.home-nav-link', linkHandler);
-    $('.work-tab').on('click', linkHandler);
-    $('.contact-link').attr({
-      'data-nav': 'contact',
-      'data-context': 'contact'
-    }).on('click', linkHandler);
-    $('#logo').on('click', linkHandler);
     $('#contact-btn').hover(function() {
       $(this).addClass('is-active');
       return $('#contact-tab').show().animate({

@@ -2,6 +2,44 @@ $ ->
     window.location.hash = 'home'#Reset all hashes upon page reload
     $('form')[0].reset() #Reset contact form upon page reload
 
+    # $.History.bind (state) ->
+    #     # Update the page's title with our current state on the end
+    #     console.log(state)
+
+
+    # Bind a handler for state: Our Mission
+    $.History.bind "/our-mission", (state) ->
+
+        # Update Menu
+        $('body').removeClass('home').addClass('category-about')
+
+        # Show apricots tab, hide the other tabs
+        $('#section-our-mission').siblings().removeClass 'is-active'
+        $('#section-our-mission').addClass 'is-active'
+
+
+    # Bind a handler for state: bananas
+    $.History.bind "/about-jj", (state) ->
+
+        # Update Menu
+        $('body').removeClass('home').addClass('category-about')
+
+        # Show apricots tab, hide the other tabs
+        $('#section-about-jj').siblings().removeClass 'is-active'
+        $('#section-about-jj').addClass 'is-active'
+
+    # Bind a handler for state: coconuts
+    $.History.bind "/about-artist", (state) ->
+
+        # Update Menu
+        $('body').removeClass('home').addClass('category-about')
+
+        # Show apricots tab, hide the other tabs
+        $('#section-about-artist').siblings().removeClass 'is-active'
+        $('#section-about-artist').addClass 'is-active'
+
+
+
     linkHandler = (e)->
         e.preventDefault()
         page      = $(@).data 'nav'
@@ -39,12 +77,12 @@ $ ->
         window.location.hash = page
 
 
-    $('#main-nav').on 'click','a',linkHandler
-    $('#home-nav').on 'click','.home-nav-link', linkHandler
-    $('.work-tab').on 'click', linkHandler
-    $('.contact-link').attr({'data-nav':'contact','data-context':'contact'}).on 'click', linkHandler
-    #$('.contact-link').click()
-    $('#logo').on 'click', linkHandler
+    # $('#main-nav').on 'click','a',linkHandler
+    # $('#home-nav').on 'click','.home-nav-link', linkHandler
+    # $('.work-tab').on 'click', linkHandler
+    # $('.contact-link').attr({'data-nav':'contact','data-context':'contact'}).on 'click', linkHandler
+    # #$('.contact-link').click()
+    # $('#logo').on 'click', linkHandler
 
 
     #Contact Button on Footer Animation

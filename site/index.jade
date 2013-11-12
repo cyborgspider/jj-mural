@@ -8,7 +8,7 @@ html
     link(rel="stylesheet",href="css/styles.css")
     <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->          
+    <![endif]-->
   body.home
     #wrap
       header
@@ -16,11 +16,11 @@ html
           #logo-container
             a(href='#', data-nav="home",data-context="index")#logo
           ul#main-nav
-            li.category-about 
+            li.category-about
               h2 About Us
-              a(href="#", data-nav='our-mission',data-context="nav") Our Mission
-              a(href="#", data-nav='about-jj',data-context="nav") About J&amp;J
-              a(href="#", data-nav='about-artist',data-context="nav") About The Artist
+              a(href="#/our-mission", data-nav='our-mission',data-context="nav") Our Mission
+              a(href="#/about-jj", data-nav='about-jj',data-context="nav") About J&amp;J
+              a(href="#/about-artist", data-nav='about-artist',data-context="nav") About The Artist
             li.category-services
               h2 Our Services
               a(href="#", data-nav='services',data-context="nav") Services
@@ -36,7 +36,7 @@ html
       h1#section-title
 
       include partials/home
-      include partials/about-jj      
+      include partials/about-jj
       include partials/our-mission
       include partials/about-artist
       include partials/services
@@ -51,8 +51,10 @@ html
 
 
     script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js")
+    script(src="http://code.jquery.com/jquery-migrate-1.2.1.js")
     script(src="js/fancybox.pack.js")
     script(src="js/placeholder.js")
     script(src="js/parsley.js")
-    script(src="js/scripts.min.js")        
+    script(src="js/jquery.history.js")
+    script(src="js/scripts.js")
 
