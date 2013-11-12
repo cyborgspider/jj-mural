@@ -1,65 +1,181 @@
 (function() {
   $(function() {
-    var linkHandler;
+    var body;
     window.location.hash = 'home';
     $('form')[0].reset();
+    body = $('body');
     $.History.bind("/our-mission", function(state) {
-      $('body').removeClass('home').addClass('category-about');
-      $('#section-our-mission').siblings().removeClass('is-active');
-      return $('#section-our-mission').addClass('is-active');
+      var link, navCategory, page, section;
+      page = 'our-mission';
+      section = $('#section-' + page);
+      link = $('a[data-nav=' + page);
+      navCategory = $('#main-nav').find('.category-about');
+      body.removeClass().addClass('category-about');
+      link.siblings().removeClass('is-active');
+      link.addClass('is-active');
+      navCategory.siblings().find('.is-active').removeClass('is-active');
+      navCategory.siblings().removeClass('is-active');
+      navCategory.addClass('is-active');
+      section.siblings().removeClass('is-active');
+      return section.addClass('is-active');
     });
     $.History.bind("/about-jj", function(state) {
-      $('body').removeClass('home').addClass('category-about');
-      $('#section-about-jj').siblings().removeClass('is-active');
-      return $('#section-about-jj').addClass('is-active');
+      var link, navCategory, page, section;
+      page = 'about-jj';
+      section = $('#section-' + page);
+      link = $('a[data-nav=' + page);
+      navCategory = $('#main-nav').find('.category-about');
+      body.removeClass().addClass('category-about');
+      link.siblings().removeClass('is-active');
+      link.addClass('is-active');
+      navCategory.siblings().find('.is-active').removeClass('is-active');
+      navCategory.siblings().removeClass('is-active');
+      navCategory.addClass('is-active');
+      section.siblings().removeClass('is-active');
+      return section.addClass('is-active');
     });
     $.History.bind("/about-artist", function(state) {
-      $('body').removeClass('home').addClass('category-about');
-      $('#section-about-artist').siblings().removeClass('is-active');
-      return $('#section-about-artist').addClass('is-active');
-    });
-    linkHandler = function(e) {
-      var bodyClass, context, listItem, listItemClass, nav, page, section;
-      e.preventDefault();
-      page = $(this).data('nav');
-      bodyClass = $('body').attr('class');
+      var link, navCategory, page, section;
+      page = 'about-artist';
       section = $('#section-' + page);
-      context = $(this).data('context');
-      nav = $('#main-nav');
-      if (context === 'home') {
-        $('body').removeClass().addClass('category-work');
-        nav.find('.category-work').addClass('is-active');
-        nav.find('a[data-nav=' + page + ']').addClass('is-active');
-      }
-      if (context === 'nav') {
-        listItem = $(this).closest('li');
-        listItemClass = listItem.attr('class');
-        if (bodyClass !== listItemClass) {
-          $('body').removeClass().addClass(listItemClass);
-        }
-        nav.find('a').removeClass('is-active');
-        $(this).addClass('is-active');
-        listItem.siblings().removeClass('is-active');
-        listItem.addClass('is-active');
-      }
-      if (context === 'tab') {
-        nav.find('a').removeClass('is-active');
-        nav.find('a[data-nav=' + page + ']').addClass('is-active');
-      }
-      if (context === 'contact') {
-        $('body').removeClass().addClass('category-contact');
-        nav.find('li').removeClass('is-active');
-        nav.find('a').removeClass('is-active');
-      }
-      if (context === 'index') {
-        $('body').removeClass().addClass('home');
-        nav.find('li').removeClass('is-active');
-        nav.find('a').removeClass('is-active');
-      }
+      link = $('a[data-nav=' + page);
+      navCategory = $('#main-nav').find('.category-about');
+      body.removeClass().addClass('category-about');
+      link.siblings().removeClass('is-active');
+      link.addClass('is-active');
+      navCategory.siblings().find('.is-active').removeClass('is-active');
+      navCategory.siblings().removeClass('is-active');
+      navCategory.addClass('is-active');
       section.siblings().removeClass('is-active');
-      section.addClass('is-active');
-      return window.location.hash = page;
-    };
+      return section.addClass('is-active');
+    });
+    $.History.bind("/services", function(state) {
+      var link, navCategory, page, section;
+      page = 'services';
+      section = $('#section-' + page);
+      link = $('a[data-nav=' + page);
+      navCategory = $('#main-nav').find('.category-services');
+      body.removeClass().addClass('category-services');
+      link.siblings().removeClass('is-active');
+      link.addClass('is-active');
+      navCategory.siblings().find('.is-active').removeClass('is-active');
+      navCategory.siblings().removeClass('is-active');
+      navCategory.addClass('is-active');
+      section.siblings().removeClass('is-active');
+      return section.addClass('is-active');
+    });
+    $.History.bind("/how-it-works", function(state) {
+      var link, navCategory, page, section;
+      page = 'how-it-works';
+      section = $('#section-' + page);
+      link = $('a[data-nav=' + page);
+      navCategory = $('#main-nav').find('.category-services');
+      body.removeClass().addClass('category-services');
+      link.siblings().removeClass('is-active');
+      link.addClass('is-active');
+      navCategory.siblings().find('.is-active').removeClass('is-active');
+      navCategory.siblings().removeClass('is-active');
+      navCategory.addClass('is-active');
+      section.siblings().removeClass('is-active');
+      return section.addClass('is-active');
+    });
+    $.History.bind("/how-it-works", function(state) {
+      var link, navCategory, page, section;
+      page = 'how-it-works';
+      section = $('#section-' + page);
+      link = $('a[data-nav=' + page);
+      navCategory = $('#main-nav').find('.category-services');
+      body.removeClass().addClass('category-services');
+      link.siblings().removeClass('is-active');
+      link.addClass('is-active');
+      navCategory.siblings().find('.is-active').removeClass('is-active');
+      navCategory.siblings().removeClass('is-active');
+      navCategory.addClass('is-active');
+      section.siblings().removeClass('is-active');
+      return section.addClass('is-active');
+    });
+    $.History.bind("/faq", function(state) {
+      var link, navCategory, page, section;
+      page = 'faq';
+      section = $('#section-' + page);
+      link = $('a[data-nav=' + page);
+      navCategory = $('#main-nav').find('.category-services');
+      body.removeClass().addClass('category-services');
+      link.siblings().removeClass('is-active');
+      link.addClass('is-active');
+      navCategory.siblings().find('.is-active').removeClass('is-active');
+      navCategory.siblings().removeClass('is-active');
+      navCategory.addClass('is-active');
+      section.siblings().removeClass('is-active');
+      return section.addClass('is-active');
+    });
+    $.History.bind("/murals", function(state) {
+      var link, navCategory, page, section;
+      page = 'murals';
+      section = $('#section-' + page);
+      link = $('a[data-nav=' + page);
+      navCategory = $('#main-nav').find('.category-work');
+      body.removeClass().addClass('category-work');
+      link.siblings().removeClass('is-active');
+      link.addClass('is-active');
+      navCategory.siblings().find('.is-active').removeClass('is-active');
+      navCategory.siblings().removeClass('is-active');
+      navCategory.addClass('is-active');
+      section.siblings().removeClass('is-active');
+      return section.addClass('is-active');
+    });
+    $.History.bind("/fine-art", function(state) {
+      var link, navCategory, page, section;
+      page = 'fine-art';
+      section = $('#section-' + page);
+      link = $('a[data-nav=' + page);
+      navCategory = $('#main-nav').find('.category-work');
+      body.removeClass().addClass('category-work');
+      link.siblings().removeClass('is-active');
+      link.addClass('is-active');
+      navCategory.siblings().find('.is-active').removeClass('is-active');
+      navCategory.siblings().removeClass('is-active');
+      navCategory.addClass('is-active');
+      section.siblings().removeClass('is-active');
+      return section.addClass('is-active');
+    });
+    $.History.bind("/framed", function(state) {
+      var link, navCategory, page, section;
+      page = 'framed';
+      section = $('#section-' + page);
+      link = $('a[data-nav=' + page);
+      navCategory = $('#main-nav').find('.category-work');
+      body.removeClass().addClass('category-work');
+      link.siblings().removeClass('is-active');
+      link.addClass('is-active');
+      navCategory.siblings().find('.is-active').removeClass('is-active');
+      navCategory.siblings().removeClass('is-active');
+      navCategory.addClass('is-active');
+      section.siblings().removeClass('is-active');
+      return section.addClass('is-active');
+    });
+    $.History.bind("/contact", function(state) {
+      var nav, page, section;
+      page = 'contact';
+      section = $('#section-' + page);
+      nav = $('#main-nav');
+      body.removeClass().addClass('category-contact');
+      nav.find('li').removeClass('is-active');
+      nav.find('a').removeClass('is-active');
+      section.siblings().removeClass('is-active');
+      return section.addClass('is-active');
+    });
+    $.History.bind("/home", function(state) {
+      var nav, page, section;
+      page = 'home';
+      section = $('#section-' + page);
+      nav = $('#main-nav');
+      body.removeClass().addClass('home');
+      nav.find('li').removeClass('is-active');
+      nav.find('a').removeClass('is-active');
+      section.siblings().removeClass('is-active');
+      return section.addClass('is-active');
+    });
     $('#contact-btn').hover(function() {
       $(this).addClass('is-active');
       return $('#contact-tab').show().animate({

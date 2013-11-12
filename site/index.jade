@@ -14,23 +14,23 @@ html
       header
         nav
           #logo-container
-            a(href='#', data-nav="home",data-context="index")#logo
+            a(href='#/home', data-nav="home")#logo
           ul#main-nav
             li.category-about
               h2 About Us
-              a(href="#/our-mission", data-nav='our-mission',data-context="nav") Our Mission
-              a(href="#/about-jj", data-nav='about-jj',data-context="nav") About J&amp;J
-              a(href="#/about-artist", data-nav='about-artist',data-context="nav") About The Artist
+              a(href="#/our-mission", data-nav='our-mission') Our Mission
+              a(href="#/about-jj", data-nav='about-jj') About J&amp;J
+              a(href="#/about-artist", data-nav='about-artist') About The Artist
             li.category-services
               h2 Our Services
-              a(href="#", data-nav='services',data-context="nav") Services
-              a(href="#", data-nav='how-it-works',data-context="nav") How It Works
-              a(href="#", data-nav='faq',data-context="nav") FAQ
+              a(href="#/services", data-nav='services') Services
+              a(href="#/how-it-works", data-nav='how-it-works') How It Works
+              a(href="#/faq", data-nav='faq') FAQ
             li.category-work
               h2 Our Work
-              a(href="#", data-nav='murals',data-context="nav") Murals
-              a(href="#", data-nav='fine-art',data-context="nav") Fine/Portrait Art
-              a(href="#", data-nav='framed',data-context="nav") Framed Art
+              a(href="#/murals", data-nav='murals') Murals
+              a(href="#/fine-art", data-nav='fine-art') Fine/Portrait Art
+              a(href="#/framed", data-nav='framed') Framed Art
             li.empty &nbsp;
 
       h1#section-title
@@ -49,12 +49,6 @@ html
 
     include partials/footer
 
-
-    script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js")
-    script(src="http://code.jquery.com/jquery-migrate-1.2.1.js")
-    script(src="js/fancybox.pack.js")
-    script(src="js/placeholder.js")
-    script(src="js/parsley.js")
-    script(src="js/jquery.history.js")
-    script(src="js/scripts.js")
+    script(src="js/vendor.js")
+    script(src="js/scripts.min.js")
 

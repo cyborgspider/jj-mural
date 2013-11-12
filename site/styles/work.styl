@@ -25,11 +25,20 @@ $tab-stroke = solid 5px #e8ded6
   &.is-active
     background-position 0 0 
     color         $text-header
+    &>a
+      color $text-header
   &.tab-fine-art
   &.tab-framed
     &.is-active
     &:hover
       background-position 0 100%
+  &>a
+    text-decoration none
+    color           $text-inactive
+    display         block
+    width           100%
+    height          100%
+
 
 
 .work-list

@@ -1,6 +1,7 @@
 $ ->
     window.location.hash = 'home'#Reset all hashes upon page reload
     $('form')[0].reset() #Reset contact form upon page reload
+    body  = $('body') #Cache body element
 
     # $.History.bind (state) ->
     #     # Update the page's title with our current state on the end
@@ -9,80 +10,215 @@ $ ->
 
     # Bind a handler for state: Our Mission
     $.History.bind "/our-mission", (state) ->
+        page    = 'our-mission'
+        section = $('#section-'+page)
+        link    = $('a[data-nav='+page)
+        navCategory = $('#main-nav').find('.category-about')
 
         # Update Menu
-        $('body').removeClass('home').addClass('category-about')
+        body.removeClass().addClass('category-about')
+        link.siblings().removeClass 'is-active'
+        link.addClass 'is-active'
+        navCategory.siblings().find('.is-active').removeClass 'is-active'
+        navCategory.siblings().removeClass 'is-active'
+        navCategory.addClass 'is-active'
 
-        # Show apricots tab, hide the other tabs
-        $('#section-our-mission').siblings().removeClass 'is-active'
-        $('#section-our-mission').addClass 'is-active'
-
-
-    # Bind a handler for state: bananas
-    $.History.bind "/about-jj", (state) ->
-
-        # Update Menu
-        $('body').removeClass('home').addClass('category-about')
-
-        # Show apricots tab, hide the other tabs
-        $('#section-about-jj').siblings().removeClass 'is-active'
-        $('#section-about-jj').addClass 'is-active'
-
-    # Bind a handler for state: coconuts
-    $.History.bind "/about-artist", (state) ->
-
-        # Update Menu
-        $('body').removeClass('home').addClass('category-about')
-
-        # Show apricots tab, hide the other tabs
-        $('#section-about-artist').siblings().removeClass 'is-active'
-        $('#section-about-artist').addClass 'is-active'
-
-
-
-    linkHandler = (e)->
-        e.preventDefault()
-        page      = $(@).data 'nav'
-        bodyClass = $('body').attr 'class'
-        section   = $('#section-'+page)
-        context   = $(@).data 'context'
-        nav       = $('#main-nav')
-
-        if context is 'home'
-            $('body').removeClass().addClass 'category-work'
-            nav.find('.category-work').addClass 'is-active'
-            nav.find('a[data-nav='+page+']').addClass 'is-active'
-        if context is 'nav'
-            listItem      = $(@).closest 'li'
-            listItemClass = listItem.attr 'class'
-            unless bodyClass is listItemClass then $('body').removeClass().addClass listItemClass
-            nav.find('a').removeClass 'is-active'
-            $(@).addClass 'is-active'
-            listItem.siblings().removeClass 'is-active'
-            listItem.addClass 'is-active'
-        if context is 'tab'
-            nav.find('a').removeClass 'is-active'
-            nav.find('a[data-nav='+page+']').addClass 'is-active'
-        if context is 'contact'
-            $('body').removeClass().addClass 'category-contact'
-            nav.find('li').removeClass 'is-active'
-            nav.find('a').removeClass 'is-active'
-        if context is 'index'
-            $('body').removeClass().addClass 'home'
-            nav.find('li').removeClass 'is-active'
-            nav.find('a').removeClass 'is-active'
-
+        # Show section, hide the other sections
         section.siblings().removeClass 'is-active'
         section.addClass 'is-active'
-        window.location.hash = page
 
 
-    # $('#main-nav').on 'click','a',linkHandler
-    # $('#home-nav').on 'click','.home-nav-link', linkHandler
-    # $('.work-tab').on 'click', linkHandler
-    # $('.contact-link').attr({'data-nav':'contact','data-context':'contact'}).on 'click', linkHandler
-    # #$('.contact-link').click()
-    # $('#logo').on 'click', linkHandler
+    $.History.bind "/about-jj", (state) ->
+
+        page    = 'about-jj'
+        section = $('#section-'+page)
+        link    = $('a[data-nav='+page)
+        navCategory = $('#main-nav').find('.category-about')
+
+        # Update Menu
+        body.removeClass().addClass('category-about')
+        link.siblings().removeClass 'is-active'
+        link.addClass 'is-active'
+        navCategory.siblings().find('.is-active').removeClass 'is-active'
+        navCategory.siblings().removeClass 'is-active'
+        navCategory.addClass 'is-active'
+        
+        section.siblings().removeClass 'is-active'
+        section.addClass 'is-active'
+
+    $.History.bind "/about-artist", (state) ->
+        page    = 'about-artist'
+        section = $('#section-'+page)
+        link    = $('a[data-nav='+page)
+        navCategory = $('#main-nav').find('.category-about')
+
+        # Update Menu
+        body.removeClass().addClass('category-about')
+        link.siblings().removeClass 'is-active'
+        link.addClass 'is-active'
+        navCategory.siblings().find('.is-active').removeClass 'is-active'
+        navCategory.siblings().removeClass 'is-active'
+        navCategory.addClass 'is-active'
+
+        # Show sections tab, hide the other sections
+        section.siblings().removeClass 'is-active'
+        section.addClass 'is-active'
+
+    $.History.bind "/services", (state) ->
+        page    = 'services'
+        section = $('#section-'+page)
+        link    = $('a[data-nav='+page)
+        navCategory = $('#main-nav').find('.category-services')
+
+        # Update Menu
+        body.removeClass().addClass('category-services')
+        link.siblings().removeClass 'is-active'
+        link.addClass 'is-active'
+        navCategory.siblings().find('.is-active').removeClass 'is-active'
+        navCategory.siblings().removeClass 'is-active'
+        navCategory.addClass 'is-active'
+        
+        # Show sections tab, hide the other sections
+        section.siblings().removeClass 'is-active'
+        section.addClass 'is-active' 
+
+    $.History.bind "/how-it-works", (state) ->
+        page    = 'how-it-works'
+        section = $('#section-'+page)
+        link    = $('a[data-nav='+page)
+        navCategory = $('#main-nav').find('.category-services')
+
+        # Update Menu
+        body.removeClass().addClass('category-services')
+        link.siblings().removeClass 'is-active'
+        link.addClass 'is-active'
+        navCategory.siblings().find('.is-active').removeClass 'is-active'
+        navCategory.siblings().removeClass 'is-active'
+        navCategory.addClass 'is-active'
+        
+        # Show sections tab, hide the other sections
+        section.siblings().removeClass 'is-active'
+        section.addClass 'is-active'
+
+    $.History.bind "/how-it-works", (state) ->
+        page    = 'how-it-works'
+        section = $('#section-'+page)
+        link    = $('a[data-nav='+page)
+        navCategory = $('#main-nav').find('.category-services')
+
+        # Update Menu
+        body.removeClass().addClass('category-services')
+        link.siblings().removeClass 'is-active'
+        link.addClass 'is-active'
+        navCategory.siblings().find('.is-active').removeClass 'is-active'
+        navCategory.siblings().removeClass 'is-active'
+        navCategory.addClass 'is-active'
+        
+        # Show sections tab, hide the other sections
+        section.siblings().removeClass 'is-active'
+        section.addClass 'is-active'
+        
+    $.History.bind "/faq", (state) ->
+        page    = 'faq'
+        section = $('#section-'+page)
+        link    = $('a[data-nav='+page)
+        navCategory = $('#main-nav').find('.category-services')
+
+        # Update Menu
+        body.removeClass().addClass('category-services')
+        link.siblings().removeClass 'is-active'
+        link.addClass 'is-active'
+        navCategory.siblings().find('.is-active').removeClass 'is-active'
+        navCategory.siblings().removeClass 'is-active'
+        navCategory.addClass 'is-active'
+        
+        # Show sections tab, hide the other sections
+        section.siblings().removeClass 'is-active'
+        section.addClass 'is-active' 
+
+    $.History.bind "/murals", (state) ->
+        page    = 'murals'
+        section = $('#section-'+page)
+        link    = $('a[data-nav='+page)
+        navCategory = $('#main-nav').find('.category-work')
+
+        # Update Menu
+        body.removeClass().addClass('category-work')
+        link.siblings().removeClass 'is-active'
+        link.addClass 'is-active'
+        navCategory.siblings().find('.is-active').removeClass 'is-active'
+        navCategory.siblings().removeClass 'is-active'
+        navCategory.addClass 'is-active'
+
+        # Show sections tab, hide the other sections
+        section.siblings().removeClass 'is-active'
+        section.addClass 'is-active'  
+
+    $.History.bind "/fine-art", (state) ->
+        page    = 'fine-art'
+        section = $('#section-'+page)
+        link    = $('a[data-nav='+page)
+        navCategory = $('#main-nav').find('.category-work')
+
+        # Update Menu
+        body.removeClass().addClass('category-work')
+        link.siblings().removeClass 'is-active'
+        link.addClass 'is-active'
+        navCategory.siblings().find('.is-active').removeClass 'is-active'
+        navCategory.siblings().removeClass 'is-active'
+        navCategory.addClass 'is-active'
+        
+        # Show sections tab, hide the other sections
+        section.siblings().removeClass 'is-active'
+        section.addClass 'is-active'                                                
+
+    $.History.bind "/framed", (state) ->
+        page    = 'framed'
+        section = $('#section-'+page)
+        link    = $('a[data-nav='+page)
+        navCategory = $('#main-nav').find('.category-work')
+
+        # Update Menu
+        body.removeClass().addClass('category-work')
+        link.siblings().removeClass 'is-active'
+        link.addClass 'is-active'
+        navCategory.siblings().find('.is-active').removeClass 'is-active'
+        navCategory.siblings().removeClass 'is-active'
+        navCategory.addClass 'is-active'
+        
+
+        # Show sections tab, hide the other sections
+        section.siblings().removeClass 'is-active'
+        section.addClass 'is-active'
+
+    $.History.bind "/contact", (state) ->
+        page    = 'contact'
+        section = $('#section-'+page)
+        nav = $('#main-nav')
+
+        # Update Menu
+        body.removeClass().addClass('category-contact')
+        nav.find('li').removeClass 'is-active'
+        nav.find('a').removeClass 'is-active'
+        
+
+        # Show sections tab, hide the other sections
+        section.siblings().removeClass 'is-active'
+        section.addClass 'is-active'   
+
+    $.History.bind "/home", (state) ->
+        page    = 'home'
+        section = $('#section-'+page)
+        nav = $('#main-nav')
+
+        # Update Menu
+        body.removeClass().addClass('home')
+        nav.find('li').removeClass 'is-active'
+        nav.find('a').removeClass 'is-active'
+        
+        # Show sections tab, hide the other sections
+        section.siblings().removeClass 'is-active'
+        section.addClass 'is-active'                
 
 
     #Contact Button on Footer Animation

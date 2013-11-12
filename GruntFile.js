@@ -68,26 +68,16 @@ module.exports =function(grunt){
             cwd: 'site/',
             src: 'php/*',
             dest: 'build/'
-          },
-          {
-            expand: true,
-            cwd: 'site/vendor',
-            src: '*.js',
-            dest: 'build/js'
           }]
         },
       },      
-      imagemin:{
-        options: {                  
-          optimizationLevel: 7
-        },        
-        dynamic:{
-          files:[{
-            expand: true,
-            cwd:    'site/images/',
-            src:    ['**/*.{jpg,gif}'],
-            dest:   'build/img/'
-          }]
+      concat: {
+        options:{
+          stripBanners:true
+        },
+        dist:{
+          src:['site/vendor/jquery.1.9.js','site/vendor/jquery.migrate.js','site/vendor/jquery.history.js','site/vendor/fancybox.pack.js','site/vendor/placeholder.js','site/vendor/parsley.js'],
+          dest: 'build/js/vendor.js'
         }
       }
      });
@@ -99,9 +89,10 @@ module.exports =function(grunt){
      grunt.loadNpmTasks('grunt-contrib-jade');
      grunt.loadNpmTasks('grunt-contrib-imagemin');
      grunt.loadNpmTasks('grunt-contrib-uglify'); 
-     grunt.loadNpmTasks('grunt-contrib-copy');          
+     grunt.loadNpmTasks('grunt-contrib-copy'); 
+     grunt.loadNpmTasks('grunt-contrib-concat');          
 
      //Run the task
      grunt.registerTask('default', ['watch','coffee', 'uglify','stylus', 'jade','copy']);
-     grunt.registerTask('build', ['coffee', 'uglify', 'stylus', 'jade','copy']);
+     grunt.registerTask('build', ['coffee', 'uglify', 'stylus', 'jade','copy','concat']);
 };
