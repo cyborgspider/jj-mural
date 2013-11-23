@@ -1,5 +1,5 @@
 <?php
-$to = 'carlos@cyborgspider.com';
+$to = 'info@jjmural.com';
 if($_POST){
     $name     = $_POST['form-name'];
     $email    = $_POST['form-email'];
