@@ -12,7 +12,7 @@ $ ->
     $.History.bind "/our-mission", (state) ->
         page    = 'our-mission'
         section = $('#section-'+page)
-        link    = $('a[data-nav='+page)
+        link    = $('a[data-nav='+page+']')
         navCategory = $('#main-nav').find('.category-about')
 
         # Update Menu
@@ -32,7 +32,7 @@ $ ->
 
         page    = 'about-jj'
         section = $('#section-'+page)
-        link    = $('a[data-nav='+page)
+        link    = $('a[data-nav='+page+']')
         navCategory = $('#main-nav').find('.category-about')
 
         # Update Menu
@@ -49,7 +49,7 @@ $ ->
     $.History.bind "/about-artist", (state) ->
         page    = 'about-artist'
         section = $('#section-'+page)
-        link    = $('a[data-nav='+page)
+        link    = $('a[data-nav='+page+']')
         navCategory = $('#main-nav').find('.category-about')
 
         # Update Menu
@@ -67,7 +67,7 @@ $ ->
     $.History.bind "/services", (state) ->
         page    = 'services'
         section = $('#section-'+page)
-        link    = $('a[data-nav='+page)
+        link    = $('a[data-nav='+page+']')
         navCategory = $('#main-nav').find('.category-services')
 
         # Update Menu
@@ -85,7 +85,7 @@ $ ->
     $.History.bind "/how-it-works", (state) ->
         page    = 'how-it-works'
         section = $('#section-'+page)
-        link    = $('a[data-nav='+page)
+        link    = $('a[data-nav='+page+']')
         navCategory = $('#main-nav').find('.category-services')
 
         # Update Menu
@@ -103,7 +103,7 @@ $ ->
     $.History.bind "/how-it-works", (state) ->
         page    = 'how-it-works'
         section = $('#section-'+page)
-        link    = $('a[data-nav='+page)
+        link    = $('a[data-nav='+page+']')
         navCategory = $('#main-nav').find('.category-services')
 
         # Update Menu
@@ -121,7 +121,7 @@ $ ->
     $.History.bind "/faq", (state) ->
         page    = 'faq'
         section = $('#section-'+page)
-        link    = $('a[data-nav='+page)
+        link    = $('a[data-nav='+page+']')
         navCategory = $('#main-nav').find('.category-services')
 
         # Update Menu
@@ -139,7 +139,7 @@ $ ->
     $.History.bind "/murals", (state) ->
         page    = 'murals'
         section = $('#section-'+page)
-        link    = $('a[data-nav='+page)
+        link    = $('a[data-nav='+page+']')
         navCategory = $('#main-nav').find('.category-work')
 
         # Update Menu
@@ -157,7 +157,7 @@ $ ->
     $.History.bind "/fine-art", (state) ->
         page    = 'fine-art'
         section = $('#section-'+page)
-        link    = $('a[data-nav='+page)
+        link    = $('a[data-nav='+page+']')
         navCategory = $('#main-nav').find('.category-work')
 
         # Update Menu
@@ -175,7 +175,7 @@ $ ->
     $.History.bind "/framed", (state) ->
         page    = 'framed'
         section = $('#section-'+page)
-        link    = $('a[data-nav='+page)
+        link    = $('a[data-nav='+page+']')
         navCategory = $('#main-nav').find('.category-work')
 
         # Update Menu

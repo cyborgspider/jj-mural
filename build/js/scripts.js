@@ -8,7 +8,7 @@
       var link, navCategory, page, section;
       page = 'our-mission';
       section = $('#section-' + page);
-      link = $('a[data-nav=' + page);
+      link = $('a[data-nav=' + page + ']');
       navCategory = $('#main-nav').find('.category-about');
       body.removeClass().addClass('category-about');
       link.siblings().removeClass('is-active');
@@ -23,7 +23,7 @@
       var link, navCategory, page, section;
       page = 'about-jj';
       section = $('#section-' + page);
-      link = $('a[data-nav=' + page);
+      link = $('a[data-nav=' + page + ']');
       navCategory = $('#main-nav').find('.category-about');
       body.removeClass().addClass('category-about');
       link.siblings().removeClass('is-active');
@@ -38,7 +38,7 @@
       var link, navCategory, page, section;
       page = 'about-artist';
       section = $('#section-' + page);
-      link = $('a[data-nav=' + page);
+      link = $('a[data-nav=' + page + ']');
       navCategory = $('#main-nav').find('.category-about');
       body.removeClass().addClass('category-about');
       link.siblings().removeClass('is-active');
@@ -53,7 +53,7 @@
       var link, navCategory, page, section;
       page = 'services';
       section = $('#section-' + page);
-      link = $('a[data-nav=' + page);
+      link = $('a[data-nav=' + page + ']');
       navCategory = $('#main-nav').find('.category-services');
       body.removeClass().addClass('category-services');
       link.siblings().removeClass('is-active');
@@ -68,7 +68,7 @@
       var link, navCategory, page, section;
       page = 'how-it-works';
       section = $('#section-' + page);
-      link = $('a[data-nav=' + page);
+      link = $('a[data-nav=' + page + ']');
       navCategory = $('#main-nav').find('.category-services');
       body.removeClass().addClass('category-services');
       link.siblings().removeClass('is-active');
@@ -83,7 +83,7 @@
       var link, navCategory, page, section;
       page = 'how-it-works';
       section = $('#section-' + page);
-      link = $('a[data-nav=' + page);
+      link = $('a[data-nav=' + page + ']');
       navCategory = $('#main-nav').find('.category-services');
       body.removeClass().addClass('category-services');
       link.siblings().removeClass('is-active');
@@ -98,7 +98,7 @@
       var link, navCategory, page, section;
       page = 'faq';
       section = $('#section-' + page);
-      link = $('a[data-nav=' + page);
+      link = $('a[data-nav=' + page + ']');
       navCategory = $('#main-nav').find('.category-services');
       body.removeClass().addClass('category-services');
       link.siblings().removeClass('is-active');
@@ -113,7 +113,7 @@
       var link, navCategory, page, section;
       page = 'murals';
       section = $('#section-' + page);
-      link = $('a[data-nav=' + page);
+      link = $('a[data-nav=' + page + ']');
       navCategory = $('#main-nav').find('.category-work');
       body.removeClass().addClass('category-work');
       link.siblings().removeClass('is-active');
@@ -128,7 +128,7 @@
       var link, navCategory, page, section;
       page = 'fine-art';
       section = $('#section-' + page);
-      link = $('a[data-nav=' + page);
+      link = $('a[data-nav=' + page + ']');
       navCategory = $('#main-nav').find('.category-work');
       body.removeClass().addClass('category-work');
       link.siblings().removeClass('is-active');
@@ -143,7 +143,7 @@
       var link, navCategory, page, section;
       page = 'framed';
       section = $('#section-' + page);
-      link = $('a[data-nav=' + page);
+      link = $('a[data-nav=' + page + ']');
       navCategory = $('#main-nav').find('.category-work');
       body.removeClass().addClass('category-work');
       link.siblings().removeClass('is-active');
