@@ -13,6 +13,8 @@ section{display:none;padding-left:290px;padding-top:58px;position:relative;min-h
 }section.is-active{display:block}
 section>p{line-height:1.8;margin-bottom:30px;}
 section>p a{color:#444133}
+.answer{position:relative;padding-left:30px;}
+.answer:before{content:'A.';position:absolute;left:0}
 h1,h2,h3{font-weight:normal;margin:0}
 .section-title{position:absolute;top:-78px;left:28px;color:#fff;font-size:36px;}
 .section-title:first-letter{font-size:70px;background:rgba(0,0,0,0.7);padding:27px 0 17px}
