@@ -139,9 +139,9 @@
       section.siblings().removeClass('is-active');
       return section.addClass('is-active');
     });
-    $.History.bind("/framed", function(state) {
+    $.History.bind("/custom-art", function(state) {
       var link, navCategory, page, section;
-      page = 'framed';
+      page = 'custom-art';
       section = $('#section-' + page);
       link = $('a[data-nav=' + page + ']');
       navCategory = $('#main-nav').find('.category-work');

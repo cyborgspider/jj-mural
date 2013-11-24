@@ -70,7 +70,7 @@ body.category-contact section{background:url("../img/bg-section-contact.jpg") no
 @media screen and (max-width:1024px){.work-list{width:740px}
 }.work-item{width:330px;height:180px;display:inline-block;margin-right:40px;margin-bottom:40px;position:relative;overflow:hidden;cursor:pointer;}
 @media screen and (min-width:1024px){.work-item:nth-child(3n+3){margin-right:0}
-}.desc{width:100%;height:100%;position:absolute;left:0;top:0;background:rgba(37,32,17,0.7);margin-left:-328px;-webkit-transition:margin-left 0.2s ease-in-out;-moz-transition:margin-left 0.2s ease-in-out;-o-transition:margin-left 0.2s ease-in-out;-ms-transition:margin-left 0.2s ease-in-out;transition:margin-left 0.2s ease-in-out;text-decoration:none;}
+}.desc{width:100%;height:100%;position:absolute;left:0;top:0;background:rgba(37,32,17,0.7);margin-left:-330px;-webkit-transition:margin-left 0.2s ease-in-out;-moz-transition:margin-left 0.2s ease-in-out;-o-transition:margin-left 0.2s ease-in-out;-ms-transition:margin-left 0.2s ease-in-out;transition:margin-left 0.2s ease-in-out;text-decoration:none;}
 .work-item:hover .desc{margin-left:0}
 .title,.type,.dimension{color:#fff;padding:0 20px;opacity:0;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";filter:alpha(opacity=0);-webkit-transition:opacity 0.4s;-moz-transition:opacity 0.4s;-o-transition:opacity 0.4s;-ms-transition:opacity 0.4s;transition:opacity 0.4s;}
 .work-item:hover .title,.work-item:hover .type,.work-item:hover .dimension{opacity:1;-ms-filter:none;filter:none}

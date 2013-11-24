@@ -172,8 +172,8 @@ $ ->
         section.siblings().removeClass 'is-active'
         section.addClass 'is-active'                                                
 
-    $.History.bind "/framed", (state) ->
-        page    = 'framed'
+    $.History.bind "/custom-art", (state) ->
+        page    = 'custom-art'
         section = $('#section-'+page)
         link    = $('a[data-nav='+page+']')
         navCategory = $('#main-nav').find('.category-work')
