@@ -59,6 +59,7 @@ body.category-contact section{background:url("../img/bg-section-contact.jpg") no
 #home-nav{width:318px;height:230px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;border:solid 8px rgba(93,90,78,0.7);position:absolute;right:-30px;top:-30px;padding:60px 55px 55px 25px}
 .home-nav-link{font-size:24px;display:block;color:#dbd8c6;margin-bottom:23px;background:url("../img/sprite.png") no-repeat 100% 0;text-decoration:none;height:17px;line-height:17px;}
 .home-nav-link.active,.home-nav-link:hover{color:#fff;background-position:100% -17px}
+.btn-pin{display:block;text-align:center}
 .work-tabbed-nav{border-bottom:solid 5px #e8ded6;width:1070px;margin-bottom:40px;zoom:1}
 @media screen and (max-width:1024px){.work-tabbed-nav{width:740px}
 }.work-tabbed-nav:before,.work-tabbed-nav:after{content:"";display:table}

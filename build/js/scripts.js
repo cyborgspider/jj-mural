@@ -1,7 +1,6 @@
 (function() {
   $(function() {
     var body;
-    window.location.hash = 'home';
     $('form')[0].reset();
     body = $('body');
     $.History.bind("/our-mission", function(state) {
@@ -197,12 +196,13 @@
       nextEffect: 'fade',
       prevEffect: 'fade',
       beforeShow: function() {
-        var desc;
-        desc = this.element.find('.title').text();
-        return this.title = desc;
+        return this.title = '<a href="//www.pinterest.com/pin/create/button/?url=' + encodeURIComponent(document.location.href) + '&media=' + encodeURIComponent('http://jjmural.com/' + this.href) + '&description=Pin from JJMural.com"' + ' data-pin-do="buttonPin" data-pin-config="none" class="btn-pin" target="_blank"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_28.png" /></a>';
       },
       helpers: {
-        title: null
+        title: {
+          type: 'outside',
+          position: 'top'
+        }
       }
     });
     return $('#submit-btn').click(function(e) {

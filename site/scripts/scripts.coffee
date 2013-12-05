@@ -1,5 +1,5 @@
 $ ->
-    window.location.hash = 'home'#Reset all hashes upon page reload
+    #window.location.hash = 'home'#Reset all hashes upon page reload
     $('form')[0].reset() #Reset contact form upon page reload
     body  = $('body') #Cache body element
 
@@ -247,10 +247,11 @@ $ ->
         nextEffect:  'fade'
         prevEffect:  'fade'
         beforeShow: ->
-            desc = @.element.find('.title').text()
-            @.title = desc
+            @.title = '<a href="//www.pinterest.com/pin/create/button/?url='+encodeURIComponent(document.location.href)+'&media='+encodeURIComponent('http://jjmural.com/'+@.href)+'&description=Pin from JJMural.com"'+' data-pin-do="buttonPin" data-pin-config="none" class="btn-pin" target="_blank"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_28.png" /></a>'
         helpers:
-            title: null
+            title:
+                type:     'outside'
+                position: 'top'
     )
 
     #Contact Form
