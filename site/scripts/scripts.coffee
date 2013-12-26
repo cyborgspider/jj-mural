@@ -1,4 +1,12 @@
 $ ->
+    #Mobile nav handler
+    resetMobileNav = ->
+        $('#mobile-nav').removeClass 'on'
+        $(window).scrollTop(0)
+
+    $('#mobile-nav').on 'click','.mobile-toggle', ->
+        $(@).closest('#mobile-nav').toggleClass('on')
+
     #window.location.hash = 'home'#Reset all hashes upon page reload
     $('form')[0].reset() #Reset contact form upon page reload
     body  = $('body') #Cache body element
@@ -22,6 +30,7 @@ $ ->
         navCategory.siblings().find('.is-active').removeClass 'is-active'
         navCategory.siblings().removeClass 'is-active'
         navCategory.addClass 'is-active'
+        resetMobileNav()
 
         # Show section, hide the other sections
         section.siblings().removeClass 'is-active'
@@ -42,9 +51,11 @@ $ ->
         navCategory.siblings().find('.is-active').removeClass 'is-active'
         navCategory.siblings().removeClass 'is-active'
         navCategory.addClass 'is-active'
-        
+        resetMobileNav()
+
         section.siblings().removeClass 'is-active'
         section.addClass 'is-active'
+
 
     $.History.bind "/about-artist", (state) ->
         page    = 'about-artist'
@@ -59,6 +70,7 @@ $ ->
         navCategory.siblings().find('.is-active').removeClass 'is-active'
         navCategory.siblings().removeClass 'is-active'
         navCategory.addClass 'is-active'
+        resetMobileNav()
 
         # Show sections tab, hide the other sections
         section.siblings().removeClass 'is-active'
@@ -77,6 +89,7 @@ $ ->
         navCategory.siblings().find('.is-active').removeClass 'is-active'
         navCategory.siblings().removeClass 'is-active'
         navCategory.addClass 'is-active'
+        resetMobileNav()        
         
         # Show sections tab, hide the other sections
         section.siblings().removeClass 'is-active'
@@ -95,6 +108,7 @@ $ ->
         navCategory.siblings().find('.is-active').removeClass 'is-active'
         navCategory.siblings().removeClass 'is-active'
         navCategory.addClass 'is-active'
+        resetMobileNav()        
         
         # Show sections tab, hide the other sections
         section.siblings().removeClass 'is-active'
@@ -113,7 +127,8 @@ $ ->
         navCategory.siblings().find('.is-active').removeClass 'is-active'
         navCategory.siblings().removeClass 'is-active'
         navCategory.addClass 'is-active'
-        
+        resetMobileNav()
+
         # Show sections tab, hide the other sections
         section.siblings().removeClass 'is-active'
         section.addClass 'is-active'
@@ -131,7 +146,8 @@ $ ->
         navCategory.siblings().find('.is-active').removeClass 'is-active'
         navCategory.siblings().removeClass 'is-active'
         navCategory.addClass 'is-active'
-        
+        resetMobileNav()        
+
         # Show sections tab, hide the other sections
         section.siblings().removeClass 'is-active'
         section.addClass 'is-active' 
@@ -149,6 +165,7 @@ $ ->
         navCategory.siblings().find('.is-active').removeClass 'is-active'
         navCategory.siblings().removeClass 'is-active'
         navCategory.addClass 'is-active'
+        resetMobileNav()
 
         # Show sections tab, hide the other sections
         section.siblings().removeClass 'is-active'
@@ -167,7 +184,8 @@ $ ->
         navCategory.siblings().find('.is-active').removeClass 'is-active'
         navCategory.siblings().removeClass 'is-active'
         navCategory.addClass 'is-active'
-        
+        resetMobileNav()
+
         # Show sections tab, hide the other sections
         section.siblings().removeClass 'is-active'
         section.addClass 'is-active'                                                
@@ -185,7 +203,7 @@ $ ->
         navCategory.siblings().find('.is-active').removeClass 'is-active'
         navCategory.siblings().removeClass 'is-active'
         navCategory.addClass 'is-active'
-        
+        resetMobileNav()        
 
         # Show sections tab, hide the other sections
         section.siblings().removeClass 'is-active'
@@ -200,7 +218,7 @@ $ ->
         body.removeClass().addClass('category-contact')
         nav.find('li').removeClass 'is-active'
         nav.find('a').removeClass 'is-active'
-        
+        resetMobileNav()        
 
         # Show sections tab, hide the other sections
         section.siblings().removeClass 'is-active'
@@ -215,6 +233,7 @@ $ ->
         body.removeClass().addClass('home')
         nav.find('li').removeClass 'is-active'
         nav.find('a').removeClass 'is-active'
+        resetMobileNav()
         
         # Show sections tab, hide the other sections
         section.siblings().removeClass 'is-active'

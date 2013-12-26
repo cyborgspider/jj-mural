@@ -7,10 +7,15 @@ $tab-stroke = solid 5px #e8ded6
 .work-tabbed-nav
   border-bottom $tab-stroke
   width         1070px
+  margin-bottom 40px
+  clearfix()  
   @media screen and (max-width:1024px)
     width 740px
-  margin-bottom 40px
-  clearfix()
+  @media screen and (max-width:640px)
+    width 100% 
+    border-bottom none
+    margin-bottom 20px
+
 .work-tab
   float         left
   padding-top   20px
@@ -25,10 +30,25 @@ $tab-stroke = solid 5px #e8ded6
   cursor        pointer
   margin-bottom -5px
   background url(../img/work-tabs.png) 0 50%
+  @media screen and (max-width:640px)
+    padding-left  10px
+    padding-right 10px
+    padding-top   16px
+    width         auto
+    background    #eaeaea
+    border        solid 3px #eaeaea
+    margin-bottom 3px
+  @media screen and (max-width:380px)
+    padding-left  7px
+    padding-right 7px
+    font-size     17px
   &:hover
   &.is-active
     background-position 0 0 
     color         $text-header
+    @media screen and (max-width:640px)
+      border     solid 3px #e8ded6
+      background #fff
     &>a
       color $text-header
   &.tab-fine-art
@@ -49,6 +69,8 @@ $tab-stroke = solid 5px #e8ded6
   width         1070px
   @media screen and (max-width:1024px)
     width 740px
+  @media screen and (max-width:640px)
+    width 100%
 .work-item
   width         330px
   height        180px
@@ -61,8 +83,12 @@ $tab-stroke = solid 5px #e8ded6
   @media screen and (min-width:1024px)
     &:nth-child(3n+3)
       margin-right 0
-
-
+  @media screen and (max-width:640px)
+    display block
+    margin-right 0
+    margin-bottom 20px
+  @media screen and (max-width:380px)
+    max-width 100%    
 
 .desc
   width            100%
