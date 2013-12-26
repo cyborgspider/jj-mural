@@ -6,6 +6,8 @@ footer
   padding-top 20px
   position relative
   bottom 0
+  @media screen and (max-width:640px)
+    display none
 .footer-wrap
   width      1280px
   overflow   hidden
@@ -100,3 +102,22 @@ footer
   width       9px
   height      13px
   display     inline-block
+
+#mobile-footer
+  display     none
+  display     block
+  background  rgba(45,39,25,0.7)
+  line-height 1.5
+  color       $color-sand
+  padding-top 20px
+  position    relative
+  bottom      0  
+  text-align  center
+  .contact-tab-button
+    margin 0 auto
+    padding 0
+  &>a
+    color           white
+    text-decoration none
+  @media screen and (max-width:640px)
+    display block
