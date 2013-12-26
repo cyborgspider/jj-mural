@@ -1,6 +1,13 @@
 (function() {
   $(function() {
-    var body;
+    var body, resetMobileNav;
+    resetMobileNav = function() {
+      $('#mobile-nav').removeClass('on');
+      return $(window).scrollTop(0);
+    };
+    $('#mobile-nav').on('click', '.mobile-toggle', function() {
+      return $(this).closest('#mobile-nav').toggleClass('on');
+    });
     $('form')[0].reset();
     body = $('body');
     $.History.bind("/our-mission", function(state) {
@@ -15,6 +22,7 @@
       navCategory.siblings().find('.is-active').removeClass('is-active');
       navCategory.siblings().removeClass('is-active');
       navCategory.addClass('is-active');
+      resetMobileNav();
       section.siblings().removeClass('is-active');
       return section.addClass('is-active');
     });
@@ -30,6 +38,7 @@
       navCategory.siblings().find('.is-active').removeClass('is-active');
       navCategory.siblings().removeClass('is-active');
       navCategory.addClass('is-active');
+      resetMobileNav();
       section.siblings().removeClass('is-active');
       return section.addClass('is-active');
     });
@@ -45,6 +54,7 @@
       navCategory.siblings().find('.is-active').removeClass('is-active');
       navCategory.siblings().removeClass('is-active');
       navCategory.addClass('is-active');
+      resetMobileNav();
       section.siblings().removeClass('is-active');
       return section.addClass('is-active');
     });
@@ -60,6 +70,7 @@
       navCategory.siblings().find('.is-active').removeClass('is-active');
       navCategory.siblings().removeClass('is-active');
       navCategory.addClass('is-active');
+      resetMobileNav();
       section.siblings().removeClass('is-active');
       return section.addClass('is-active');
     });
@@ -75,6 +86,7 @@
       navCategory.siblings().find('.is-active').removeClass('is-active');
       navCategory.siblings().removeClass('is-active');
       navCategory.addClass('is-active');
+      resetMobileNav();
       section.siblings().removeClass('is-active');
       return section.addClass('is-active');
     });
@@ -90,6 +102,7 @@
       navCategory.siblings().find('.is-active').removeClass('is-active');
       navCategory.siblings().removeClass('is-active');
       navCategory.addClass('is-active');
+      resetMobileNav();
       section.siblings().removeClass('is-active');
       return section.addClass('is-active');
     });
@@ -105,6 +118,7 @@
       navCategory.siblings().find('.is-active').removeClass('is-active');
       navCategory.siblings().removeClass('is-active');
       navCategory.addClass('is-active');
+      resetMobileNav();
       section.siblings().removeClass('is-active');
       return section.addClass('is-active');
     });
@@ -120,6 +134,7 @@
       navCategory.siblings().find('.is-active').removeClass('is-active');
       navCategory.siblings().removeClass('is-active');
       navCategory.addClass('is-active');
+      resetMobileNav();
       section.siblings().removeClass('is-active');
       return section.addClass('is-active');
     });
@@ -135,6 +150,7 @@
       navCategory.siblings().find('.is-active').removeClass('is-active');
       navCategory.siblings().removeClass('is-active');
       navCategory.addClass('is-active');
+      resetMobileNav();
       section.siblings().removeClass('is-active');
       return section.addClass('is-active');
     });
@@ -150,6 +166,7 @@
       navCategory.siblings().find('.is-active').removeClass('is-active');
       navCategory.siblings().removeClass('is-active');
       navCategory.addClass('is-active');
+      resetMobileNav();
       section.siblings().removeClass('is-active');
       return section.addClass('is-active');
     });
@@ -161,6 +178,7 @@
       body.removeClass().addClass('category-contact');
       nav.find('li').removeClass('is-active');
       nav.find('a').removeClass('is-active');
+      resetMobileNav();
       section.siblings().removeClass('is-active');
       return section.addClass('is-active');
     });
@@ -172,6 +190,7 @@
       body.removeClass().addClass('home');
       nav.find('li').removeClass('is-active');
       nav.find('a').removeClass('is-active');
+      resetMobileNav();
       section.siblings().removeClass('is-active');
       return section.addClass('is-active');
     });
