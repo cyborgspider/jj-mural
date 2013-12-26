@@ -76,7 +76,7 @@ body.category-work section{padding-left:60px;}
 body.category-contact section{background:url("../img/bg-section-contact.jpg") no-repeat 60px 60px;}
 @media screen and (max-width:640px){body.category-contact section{background:none}
 }#intro{color:#dbd8c6;width:910px;height:170px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;padding:35px 0 0 48px;background:rgba(76,77,79,0.7);position:relative;}
-@media screen and (max-width:640px){#intro{width:100%;padding:20px;text-align:center;height:100%;margin-bottom:20px}
+@media screen and (max-width:640px){#intro{width:100%;padding:20px;text-align:center;height:100%;margin-bottom:20px;background:none}
 }#intro>h1{font-size:50px;margin-bottom:15px;}
 @media screen and (max-width:640px){#intro>h1{font-size:40px}
 }#intro>h2{font-size:28px;}
