@@ -101,7 +101,7 @@ footer{background:rgba(45,39,25,0.7);line-height:28px;color:#dbd8c6;height:44px;
 #social{padding-right:20px;border-right:solid 1px #b0a57a;float:left}
 .social-link{width:28px;height:28px;background:url("../img/social-icons.png") no-repeat;display:inline-block;text-indent:-9999px;margin-right:4px;}
 .social-link.yelp{background-position:0 0;margin-left:13px}
-.social-link.facebook{background-position:-28px 0;margin-left:13px}
+.social-link.facebook{background-position:-28px 0}
 .social-link.pinterest{background-position:-56px 0}
 .social-link.instagram{background-position:-84px 0;margin:0}
 #copyright{padding-left:20px;float:left}
