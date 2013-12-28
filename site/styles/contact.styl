@@ -5,8 +5,8 @@
 
 #contact-form
   clearfix()
-  float left
-  padding 10px 0 20px
+  padding  10px 0 20px
+  overflow hidden
 .row
   margin-bottom 20px
   position      relative
@@ -16,10 +16,19 @@
   width        400px
   display      inline-block
   margin-right 20px
-  @media screen and (max-width:1024px)
+  @media       screen and (max-width:1024px)
     margin-bottom 20px 
-  @media screen and (max-width:640px) 
-    width 100%   
+  @media screen and (max-width:768px) 
+    width 100% 
+.textarea-wrap
+  width        400px
+  height       auto
+  display      inline-block
+  margin-right 20px
+  @media       screen and (max-width:1024px)
+    margin-bottom 20px 
+  @media screen and (max-width:768px) 
+    width 100%       
 
 input[type="text"]
 textarea
@@ -30,6 +39,7 @@ select
   font-size  16px
   box-sizing border-box
   background #fff
+  border solid 1px #bbb  
   &.parsley-error
     background #e3cece
   &.parsley-success
@@ -37,7 +47,6 @@ select
 
 select
   height 36px
-  border solid 1px #bbb
 textarea
   height 200px
   resize none
@@ -47,18 +56,20 @@ textarea
   position    absolute
   font-size   10px
   padding-top 5px
-#submit-btn
-  width       auto
-  padding     0 10px
-  line-height 40px
-  height      40px
-  border      none
-  font-size   18px
-  box-shadow  0 2px 3px rgba(0,0,0,0.3)
-  cursor      pointer
-  background  $button-background
-  font-family 'Jacques Francois', serif
-  color       #fff
+input[type="submit"]
+  width              auto
+  padding            0 10px
+  -webkit-appearance none
+  line-height        40px
+  height             40px
+  border             none
+  font-size          18px
+  box-shadow         0 2px 3px rgba(0,0,0,0.3)
+  cursor             pointer
+  background         $button-background
+  font-family        'Jacques Francois', serif
+  color              #fff
+  clearfix()
   @media screen and (max-width:640px)
     display block
     margin 0 auto
