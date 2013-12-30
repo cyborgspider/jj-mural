@@ -5,7 +5,7 @@
       $('#mobile-nav').removeClass('on');
       return $(window).scrollTop(0);
     };
-    $('#mobile-nav').on('click', '.mobile-toggle', function() {
+    $('.mobile-toggle').click(function() {
       return $(this).closest('#mobile-nav').toggleClass('on');
     });
     $('form')[0].reset();

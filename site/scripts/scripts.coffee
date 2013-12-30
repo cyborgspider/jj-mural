@@ -4,7 +4,7 @@ $ ->
         $('#mobile-nav').removeClass 'on'
         $(window).scrollTop(0)
 
-    $('#mobile-nav').on 'click','.mobile-toggle', ->
+    $('.mobile-toggle').click  ->
         $(@).closest('#mobile-nav').toggleClass('on')
 
     #window.location.hash = 'home'#Reset all hashes upon page reload
